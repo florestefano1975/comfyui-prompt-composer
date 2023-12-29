@@ -13,6 +13,8 @@ A suite of tools for prompt management.
 
 The single text node contains a typing box and a slider to adjust its weight.
 
+![Single Text Node](/screenshot/single-text.png)
+
 ## Multiple Text Node
 
 The multiple text node contains six typing boxes with sliders to adjust their weights.

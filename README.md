@@ -9,7 +9,9 @@ A suite of tools for prompt management.
 
 ![ComfyUI Prompt Composer Node](/screenshot/prompt-composer-overview.png)
 
-## Manual install
+## Installation and update instructions
+
+### Manual install
 
 To install comfyui-prompt-composer:
 
@@ -20,7 +22,7 @@ To install comfyui-prompt-composer:
 
 ### Manual update
 
-To update comfyui-portrait-master:
+To update comfyui-prompt-composer:
 
 1. open the terminal on the ComfyUI installation folder
 2. digit: `cd custom_nodes`

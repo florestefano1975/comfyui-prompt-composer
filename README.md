@@ -10,6 +10,8 @@ A suite of tools for prompt management.
 
 ![ComfyUI Prompt Composer Node](/screenshot/prompt-composer-overview.png)
 
+Basic workflow for testing the nodes: [prompt-composer-base-workflow.json](/workflow/prompt-composer-base-workflow.json)
+
 ## Installation and update instructions
 
 ### Manual install

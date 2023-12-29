@@ -42,3 +42,7 @@ The assembly node contains six entry points for text strings. The output is a fu
 ## Usage
 
 The combination of nodes helps the user compose their prompt in an orderly and logical way. Visual sliders allow you to conveniently adjust the weight of individual portions of the prompt.
+
+## Customization
+
+The _lists_ folder contains TXT files with _Style_ and _Effect_ node list entries.

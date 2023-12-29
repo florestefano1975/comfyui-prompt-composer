@@ -1,122 +1,7 @@
 {
-  "last_node_id": 85,
-  "last_link_id": 180,
+  "last_node_id": 88,
+  "last_link_id": 183,
   "nodes": [
-    {
-      "id": 81,
-      "type": "PromptComposerTextMuliple",
-      "pos": [
-        790,
-        40
-      ],
-      "size": [
-        650,
-        470
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
-          "type": "TUPLE",
-          "links": [
-            175
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerTextMuliple"
-      },
-      "widgets_values": [
-        "realistic, photo, portrait head and shouders",
-        1.3900000000000001,
-        "cinese man 27-years-old",
-        1,
-        "detailed eyes",
-        1.12,
-        "muscular",
-        1.16,
-        "",
-        0,
-        "",
-        0
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 82,
-      "type": "PromptComposerStyler",
-      "pos": [
-        790,
-        550
-      ],
-      "size": [
-        320,
-        80
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
-          "type": "TUPLE",
-          "links": [
-            176
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerStyler"
-      },
-      "widgets_values": [
-        "Lomography",
-        1.19
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 84,
-      "type": "PromptComposerEffect",
-      "pos": [
-        1120,
-        550
-      ],
-      "size": [
-        320,
-        80
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
-          "type": "TUPLE",
-          "links": [
-            177
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerEffect"
-      },
-      "widgets_values": [
-        "Polaroid",
-        0.35000000000000003
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
     {
       "id": 62,
       "type": "CheckpointLoaderSimple",
@@ -124,14 +9,14 @@
         10,
         190
       ],
-      "size": [
-        390,
-        100
-      ],
+      "size": {
+        "0": 390,
+        "1": 100
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 3,
+      "order": 0,
       "mode": 0,
       "outputs": [
         {
@@ -170,14 +55,14 @@
         10,
         40
       ],
-      "size": [
-        390,
-        110
-      ],
+      "size": {
+        "0": 390,
+        "1": 110
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 4,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -205,14 +90,14 @@
         10,
         330
       ],
-      "size": [
-        390,
-        100
-      ],
+      "size": {
+        "0": 390,
+        "1": 100
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 5,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -258,18 +143,18 @@
         790,
         670
       ],
-      "size": [
-        650,
-        130
-      ],
+      "size": {
+        "0": 650,
+        "1": 130
+      },
       "flags": {},
-      "order": 8,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
           "name": "text_1",
           "type": "TUPLE",
-          "link": 175
+          "link": 181
         },
         {
           "name": "text_2",
@@ -289,12 +174,12 @@
         {
           "name": "text_5",
           "type": "TUPLE",
-          "link": 176
+          "link": 182
         },
         {
           "name": "text_6",
           "type": "TUPLE",
-          "link": 177
+          "link": 183
         }
       ],
       "outputs": [
@@ -321,12 +206,12 @@
         790,
         840
       ],
-      "size": [
-        650,
-        210
-      ],
+      "size": {
+        "0": 650,
+        "1": 210
+      },
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -360,12 +245,12 @@
         1450,
         840
       ],
-      "size": [
-        760,
-        210
-      ],
+      "size": {
+        "0": 760,
+        "1": 210
+      },
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -393,7 +278,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(realistic, photo, portrait head and shouders:1.39), (cinese man 27-years-old:1), (detailed eyes:1.12), (muscular:1.16), (lomography style, lomography photography:1.19), (polaroid effect:0.35)"
+        "(realistic, photo, portrait head and shouders:1.39), (cinese man 27-years-old:1), (detailed eyes:1.12), (muscular:1.16), (lomography style, lomography photography:1), (low key effect:1)"
       ]
     },
     {
@@ -403,14 +288,14 @@
         10,
         470
       ],
-      "size": [
-        390,
-        130
-      ],
+      "size": {
+        "0": 390,
+        "1": 130
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -451,14 +336,14 @@
         10,
         640
       ],
-      "size": [
-        390,
-        130
-      ],
+      "size": {
+        "0": 390,
+        "1": 130
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -508,12 +393,12 @@
         10,
         810
       ],
-      "size": [
-        390,
-        100
-      ],
+      "size": {
+        "0": 390,
+        "1": 100
+      },
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -527,7 +412,9 @@
           }
         }
       ],
-      "properties": {},
+      "properties": {
+        "Run widget replace on values": false
+      },
       "widgets_values": [
         ""
       ]
@@ -539,10 +426,10 @@
         10,
         950
       ],
-      "size": [
-        390,
-        220
-      ],
+      "size": {
+        "0": 390,
+        "1": 220
+      },
       "flags": {
         "collapsed": false
       },
@@ -673,8 +560,8 @@
       "id": 67,
       "type": "PrimitiveNode",
       "pos": [
-        412,
-        598
+        410,
+        600
       ],
       "size": [
         330,
@@ -683,7 +570,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 7,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -698,7 +585,9 @@
         }
       ],
       "title": "Image number",
-      "properties": {},
+      "properties": {
+        "Run widget replace on values": false
+      },
       "widgets_values": [
         906567150918055,
         "fixed"
@@ -708,11 +597,11 @@
       "id": 8,
       "type": "VAEDecode",
       "pos": [
-        420,
+        410,
         720
       ],
       "size": [
-        320,
+        330,
         50
       ],
       "flags": {
@@ -748,41 +637,14 @@
       }
     },
     {
-      "id": 25,
-      "type": "PreviewImage",
-      "pos": [
-        1450,
-        40
-      ],
-      "size": [
-        760,
-        760
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 169
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 55,
       "type": "FreeU_V2",
       "pos": [
-        420,
+        410,
         810
       ],
       "size": [
-        320,
+        330,
         130
       ],
       "flags": {
@@ -817,6 +679,169 @@
         1.3,
         0.6
       ]
+    },
+    {
+      "id": 25,
+      "type": "PreviewImage",
+      "pos": [
+        1450,
+        40
+      ],
+      "size": {
+        "0": 760,
+        "1": 760
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 169
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 86,
+      "type": "PromptComposerTextMuliple",
+      "pos": [
+        790,
+        40
+      ],
+      "size": [
+        650,
+        470.0000123977661
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            181
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerTextMuliple"
+      },
+      "widgets_values": [
+        "realistic, photo, portrait head and shouders",
+        1.3900000000000001,
+        "cinese man 27-years-old",
+        1,
+        "detailed eyes",
+        1.12,
+        "muscular",
+        1.16,
+        "",
+        0,
+        "",
+        0
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 87,
+      "type": "PromptComposerStyler",
+      "pos": [
+        790,
+        550
+      ],
+      "size": [
+        310,
+        80
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            182
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerStyler"
+      },
+      "widgets_values": [
+        "Lomography",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 88,
+      "type": "PromptComposerEffect",
+      "pos": [
+        1110,
+        550
+      ],
+      "size": [
+        330,
+        80
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            183
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerEffect"
+      },
+      "widgets_values": [
+        "Low Key",
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [
@@ -949,30 +974,6 @@
       "LATENT"
     ],
     [
-      175,
-      81,
-      0,
-      83,
-      0,
-      "TUPLE"
-    ],
-    [
-      176,
-      82,
-      0,
-      83,
-      4,
-      "TUPLE"
-    ],
-    [
-      177,
-      84,
-      0,
-      83,
-      5,
-      "TUPLE"
-    ],
-    [
       179,
       83,
       0,
@@ -987,6 +988,30 @@
       69,
       1,
       "STRING"
+    ],
+    [
+      181,
+      86,
+      0,
+      83,
+      0,
+      "TUPLE"
+    ],
+    [
+      182,
+      87,
+      0,
+      83,
+      4,
+      "TUPLE"
+    ],
+    [
+      183,
+      88,
+      0,
+      83,
+      5,
+      "TUPLE"
     ]
   ],
   "groups": [],

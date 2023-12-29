@@ -34,6 +34,9 @@ class PromptComposerTextSingle:
     @classmethod
     def INPUT_TYPES(s):
         return {
+            "optional": {
+                "text_in_opt": ("TUPLE",),
+            },
             "required": {
                 "text": ("STRING", {
                     "multiline": True
@@ -48,16 +51,21 @@ class PromptComposerTextSingle:
             }
         }
     RETURN_TYPES = ("TUPLE",)
-    RETURN_NAMES = ("text",)
+    RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextSingle"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextSingle(self, text, weight):
+    def promptComposerTextSingle(self, text_in_opt="", text="", weight=0):
         prompt = []
-        if text != '' and weight > 0:
+        if text_in_opt != "":
+            prompt.append(text_in_opt)
+        if text != "" and weight > 0:
             prompt.append(f"({text}:{round(weight,2)})")
-        prompt = ",".join(prompt)
-        prompt = prompt.lower()
-        return(prompt,)
+        if len(prompt) > 0:
+            prompt = ", ".join(prompt)
+            prompt = prompt.lower()
+            return(prompt,)
+        else:
+            return("",)
 
 # Prompt Composer Text Node
 
@@ -67,6 +75,9 @@ class PromptComposerTextMuliple:
     @classmethod
     def INPUT_TYPES(s):
         return {
+            "optional": {
+                "text_in_opt": ("TUPLE",),
+            },
             "required": {
                 "text_1": ("STRING", {
                     "multiline": True
@@ -131,26 +142,31 @@ class PromptComposerTextMuliple:
             }
         }
     RETURN_TYPES = ("TUPLE",)
-    RETURN_NAMES = ("text",)
+    RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextMuliple"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextMuliple(self, text_1, weight_1, text_2, weight_2, text_3, weight_3, text_4, weight_4, text_5, weight_5, text_6, weight_6):
+    def promptComposerTextMuliple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0):
         prompt = []
-        if text_1 != '' and weight_1 > 0:
+        if text_in_opt != "":
+            prompt.append(text_in_opt)
+        if text_1 != "" and weight_1 > 0:
             prompt.append(f"({text_1}:{round(weight_1,2)})")
-        if text_2 != '' and weight_2 > 0:
+        if text_2 != "" and weight_2 > 0:
             prompt.append(f"({text_2}:{round(weight_2,2)})")
-        if text_3 != '' and weight_3 > 0:
+        if text_3 != "" and weight_3 > 0:
             prompt.append(f"({text_3}:{round(weight_3,2)})")
-        if text_4 != '' and weight_4 > 0:
+        if text_4 != "" and weight_4 > 0:
             prompt.append(f"({text_4}:{round(weight_4,2)})")
-        if text_5 != '' and weight_5 > 0:
+        if text_5 != "" and weight_5 > 0:
             prompt.append(f"({text_5}:{round(weight_5,2)})")
-        if text_6 != '' and weight_3 > 0:
+        if text_6 != "" and weight_3 > 0:
             prompt.append(f"({text_6}:{round(weight_6,2)})")
-        prompt = ", ".join(prompt)
-        prompt = prompt.lower()
-        return(prompt,)
+        if len(prompt) > 0:
+            prompt = ", ".join(prompt)
+            prompt = prompt.lower()
+            return(prompt,)
+        else:
+            return("",)
 
 # Styler Node
     
@@ -160,6 +176,9 @@ class PromptComposerStyler:
     @classmethod
     def INPUT_TYPES(s):
         return {
+            "optional": {
+                "text_in_opt": ("TUPLE",),
+            },
             "required": {
                 "style": (styles, {
                     "default": styles[0],
@@ -174,15 +193,21 @@ class PromptComposerStyler:
             },
         }
     RETURN_TYPES = ("TUPLE",)
-    RETURN_NAMES = ("text",)
+    RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerStyler"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerStyler(self, style="-", style_weight=0):
-        prompt = ""
+    def promptComposerStyler(self, text_in_opt="", style="-", style_weight=0):
+        prompt = []
+        if text_in_opt != "":
+            prompt.append(text_in_opt)
         if style != '-' and style_weight > 0:
-            prompt = f"({style} style, {style} photography:{round(style_weight,2)})"
-        prompt = prompt.lower()
-        return(prompt,)
+            prompt.append(f"({style} style, {style} photography:{round(style_weight,2)})")
+        if len(prompt) > 0:
+            prompt = ", ".join(prompt)
+            prompt = prompt.lower()
+            return(prompt,)
+        else:
+            return("",)
 
 # Effect Node
     
@@ -192,6 +217,9 @@ class PromptComposerEffect:
     @classmethod
     def INPUT_TYPES(s):
         return {
+            "optional": {
+                "text_in_opt": ("TUPLE",),
+            },
             "required": {
                 "effect": (effects, {
                     "default": effects[0],
@@ -206,15 +234,21 @@ class PromptComposerEffect:
             },
         }
     RETURN_TYPES = ("TUPLE",)
-    RETURN_NAMES = ("text",)
+    RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerEffect"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerEffect(self, effect="-", effect_weight=0):
-        prompt = ""
+    def promptComposerEffect(self, text_in_opt="", effect="-", effect_weight=0):
+        prompt = []
+        if text_in_opt != "":
+            prompt.append(text_in_opt)
         if effect != '-' and effect_weight > 0:
-            prompt = f"({effect} effect:{round(effect_weight,2)})"
-        prompt = prompt.lower()
-        return(prompt,)
+            prompt.append(f"({effect} effect:{round(effect_weight,2)})")
+        if len(prompt) > 0:
+            prompt = ", ".join(prompt)
+            prompt = prompt.lower()
+            return(prompt,)
+        else:
+            return("",)
 
 # Assembler Node
     
@@ -235,22 +269,22 @@ class PromptComposerAssembler:
             }
         }
     RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("text",)
+    RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerAssembler"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
     def promptComposerAssembler(self, text_1="", text_2="", text_3="", text_4="", text_5="", text_6=""):
         prompt = []
-        if text_1 != '':
+        if text_1 != "":
             prompt.append(text_1)
-        if text_2 != '':
+        if text_2 != "":
             prompt.append(text_2)
-        if text_3 != '':
+        if text_3 != "":
             prompt.append(text_3)
-        if text_4 != '':
+        if text_4 != "":
             prompt.append(text_4)
-        if text_5 != '':
+        if text_5 != "":
             prompt.append(text_5)
-        if text_6 != '':
+        if text_6 != "":
             prompt.append(text_6)
         prompt = ", ".join(prompt)
         prompt = prompt.lower()

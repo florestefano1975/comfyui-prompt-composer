@@ -1,4 +1,5 @@
 # ComfyUI Prompt Composer
+
 A suite of tools for prompt management.
 
 **_If this project is useful to you and you like it, please consider a small donation to the author._**
@@ -32,39 +33,19 @@ To update comfyui-prompt-composer:
 
 **Warning: update command overwrites files modified and customized by users.**
 
-## Single Text Node
+## Node List
 
-The single text node contains a typing box and a slider to adjust its weight.
+- **Single Text Node**: contains a typing box and a slider to adjust its weight.
+- **Multiple Text Node**: contains six typing boxes with sliders to adjust their weights.
+- **Styler Node**: style selector from list and slider for set its weight.
+- **Effect Node**: effect selector from list and slider for set its weight.
+- **Assembler Node**: this node contains six entry points for text strings. The output is a full string prompt.
 
-![Single Text Node](/screenshot/single-text.png)
-
-## Multiple Text Node
-
-The multiple text node contains six typing boxes with sliders to adjust their weights.
-
-![Multiple Text Node](/screenshot/multiple-text.png)
-
-## Styler Node
-
-The styler node allows you to select a style from a list and set its weight.
-
-![Styler Node](/screenshot/styler.png)
-
-## Effect Node
-
-The effect node allows you to select an effect from a list and set its weight.
-
-![Effect Node](/screenshot/effect.png)
-
-## Assembler Node
-
-The assembly node contains six entry points for text strings. The output is a full string prompt.
-
-![Assembler Node](/screenshot/assembler.png)
+**Single Text Node**, **Multiple Text Node**, **Styler Node** and **Effect Node** have an entry point (__text_in_opt__) to concatenate unlimitedly with the other nodes.
 
 ## Usage
 
-The combination of nodes helps the user compose their prompt in an orderly and logical way. Visual sliders allow you to conveniently adjust the weight of individual portions of the prompt.
+Combining nodes helps the user sequence strings for prompts, also creating logical groupings if necessary.
 
 ## Customization
 

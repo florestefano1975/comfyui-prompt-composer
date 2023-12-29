@@ -1,208 +1,86 @@
 {
-  "last_node_id": 98,
-  "last_link_id": 118,
+  "last_node_id": 138,
+  "last_link_id": 159,
   "nodes": [
     {
-      "id": 68,
-      "type": "PromptComposerAssembler",
+      "id": 137,
+      "type": "PromptComposerTextMuliple",
       "pos": [
-        850,
-        1910
+        107,
+        310
       ],
       "size": {
-        "0": 268,
-        "1": 158
+        "0": 400,
+        "1": 470
       },
       "flags": {},
-      "order": 4,
+      "order": 0,
       "mode": 0,
       "inputs": [
         {
-          "name": "text_1",
+          "name": "text_in_opt",
           "type": "TUPLE",
-          "link": 101,
-          "slot_index": 0
-        },
-        {
-          "name": "text_2",
-          "type": "TUPLE",
-          "link": 102,
-          "slot_index": 1
-        },
-        {
-          "name": "text_3",
-          "type": "TUPLE",
-          "link": null,
-          "slot_index": 2
-        },
-        {
-          "name": "text_4",
-          "type": "TUPLE",
-          "link": null,
-          "slot_index": 3
-        },
-        {
-          "name": "text_5",
-          "type": "TUPLE",
-          "link": 103,
-          "slot_index": 4
-        },
-        {
-          "name": "text_6",
-          "type": "TUPLE",
-          "link": 104,
-          "slot_index": 5
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "text",
-          "type": "STRING",
+          "name": "text_out",
+          "type": "TUPLE",
           "links": [
-            80
+            158
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "PromptComposerAssembler"
+        "Node name for S&R": "PromptComposerTextMuliple"
       },
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "widgets_values": [
+        "in the forest",
+        1,
+        "snow",
+        1.07,
+        "snowing",
+        1.22,
+        "wind",
+        0.78,
+        "",
+        0,
+        "",
+        0
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
-      "id": 66,
-      "type": "ShowText|pysssss",
+      "id": 135,
+      "type": "PromptComposerEffect",
       "pos": [
-        1190,
-        1910
+        911,
+        804
       ],
       "size": {
-        "0": 740,
-        "1": 360
+        "0": 315,
+        "1": 82
       },
       "flags": {},
       "order": 5,
       "mode": 0,
       "inputs": [
         {
-          "name": "text",
-          "type": "STRING",
-          "link": 80,
-          "widget": {
-            "name": "text"
-          }
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": 159
         }
       ],
       "outputs": [
         {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "(realistic photo:1.4), (woman 30-years-old:1), (wearing a long white tunic:1.1), (intricate, details:1.2), (detailed eyes:1.25), (street style, street photography:1.15), (vintage effect:1.2)"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 89,
-      "type": "PromptComposerTextSingle",
-      "pos": [
-        360,
-        1570
-      ],
-      "size": {
-        "0": 400,
-        "1": 100
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
+          "name": "text_out",
           "type": "TUPLE",
           "links": [
-            101
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerTextSingle"
-      },
-      "widgets_values": [
-        "Realistic Photo",
-        1.4000000000000001
-      ],
-      "color": "#322",
-      "bgcolor": "#533"
-    },
-    {
-      "id": 76,
-      "type": "PromptComposerStyler",
-      "pos": [
-        360,
-        2220
-      ],
-      "size": {
-        "0": 400,
-        "1": 82
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
-          "type": "TUPLE",
-          "links": [
-            103
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerStyler"
-      },
-      "widgets_values": [
-        "Street",
-        1.1500000000000001
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 87,
-      "type": "PromptComposerEffect",
-      "pos": [
-        360,
-        2340
-      ],
-      "size": {
-        "0": 400,
-        "1": 82
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "text",
-          "type": "TUPLE",
-          "links": [
-            104
+            154
           ],
           "shape": 3,
           "slot_index": 0
@@ -212,32 +90,228 @@
         "Node name for S&R": "PromptComposerEffect"
       },
       "widgets_values": [
-        "Vintage",
-        1.2
+        "Sepia",
+        1.1500000000000001
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 126,
+      "type": "PromptComposerTextSingle",
+      "pos": [
+        105,
+        108
+      ],
+      "size": [
+        390,
+        100.00000095367432
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            139
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerTextSingle"
+      },
+      "widgets_values": [
+        "realistic",
+        1.4000000000000001
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 138,
+      "type": "PromptComposerStyler",
+      "pos": [
+        544,
+        799
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            159
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerStyler"
+      },
+      "widgets_values": [
+        "High Key",
+        1.25
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 132,
+      "type": "PromptComposerTextSingle",
+      "pos": [
+        558,
+        628
+      ],
+      "size": [
+        410,
+        100
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": 158
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "TUPLE",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerTextSingle"
+      },
+      "widgets_values": [
+        "detailed, intricate",
+        1.1400000000000001
       ],
       "color": "#223",
       "bgcolor": "#335"
     },
     {
-      "id": 90,
-      "type": "PromptComposerTextMuliple",
+      "id": 130,
+      "type": "PromptComposerAssembler",
       "pos": [
-        360,
-        1710
+        1086,
+        131
       ],
-      "size": [
-        400,
-        470
-      ],
+      "size": {
+        "0": 210,
+        "1": 126
+      },
       "flags": {},
-      "order": 3,
+      "order": 6,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "text_1",
+          "type": "TUPLE",
+          "link": 156
+        },
+        {
+          "name": "text_2",
+          "type": "TUPLE",
+          "link": 144
+        },
+        {
+          "name": "text_3",
+          "type": "TUPLE",
+          "link": 154
+        },
+        {
+          "name": "text_4",
+          "type": "TUPLE",
+          "link": null
+        },
+        {
+          "name": "text_5",
+          "type": "TUPLE",
+          "link": null
+        },
+        {
+          "name": "text_6",
+          "type": "TUPLE",
+          "link": null
+        }
+      ],
       "outputs": [
         {
-          "name": "text",
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerAssembler"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 128,
+      "type": "PromptComposerTextMuliple",
+      "pos": [
+        596,
+        92
+      ],
+      "size": {
+        "0": 400,
+        "1": 470
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "TUPLE",
+          "link": 139
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
           "type": "TUPLE",
           "links": [
-            102
+            156
           ],
           "shape": 3,
           "slot_index": 0
@@ -249,60 +323,117 @@
       "widgets_values": [
         "woman 30-years-old",
         1,
-        "wearing a long white tunic",
-        1.1,
-        "intricate, details",
-        1.2,
-        "detailed eyes",
-        1.25,
+        "freckles",
+        1.07,
+        "skin moles",
+        0.65,
+        "smiling",
+        0.46,
         "",
         0,
         "",
         0
       ],
-      "color": "#332922",
-      "bgcolor": "#593930"
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 131,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1330,
+        327
+      ],
+      "size": [
+        530,
+        330
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 143,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(realistic:1.4), (woman 30-years-old:1), (freckles:1.07), (skin moles:0.65), (smiling:0.46), (in the forest:1), (snow:1.07), (snowing:1.22), (wind:0.78), (detailed, intricate:1.14), (high key style, high key photography:1.25), (sepia effect:1.15)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     }
   ],
   "links": [
     [
-      80,
-      68,
+      139,
+      126,
       0,
-      66,
+      128,
+      0,
+      "TUPLE"
+    ],
+    [
+      143,
+      130,
+      0,
+      131,
       0,
       "STRING"
     ],
     [
-      101,
-      89,
+      144,
+      132,
       0,
-      68,
-      0,
-      "TUPLE"
-    ],
-    [
-      102,
-      90,
-      0,
-      68,
+      130,
       1,
       "TUPLE"
     ],
     [
-      103,
-      76,
+      154,
+      135,
       0,
-      68,
-      4,
+      130,
+      2,
       "TUPLE"
     ],
     [
-      104,
-      87,
+      156,
+      128,
       0,
-      68,
-      5,
+      130,
+      0,
+      "TUPLE"
+    ],
+    [
+      158,
+      137,
+      0,
+      132,
+      0,
+      "TUPLE"
+    ],
+    [
+      159,
+      138,
+      0,
+      135,
+      0,
       "TUPLE"
     ]
   ],

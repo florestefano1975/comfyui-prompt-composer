@@ -12,9 +12,14 @@ A suite of tools for prompt management.
 
 Basic workflow for testing the nodes: [prompt-composer-base-workflow.json](/workflow/prompt-composer-base-workflow.json)
 
-## Installation and update instructions
+## Install from ComfyUI Manager
 
-### Manual install
+- Type _florestefano1975_ on the search bar of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
+- Click the install button.
+
+## Manual installation and update instructions
+
+### Install
 
 To install comfyui-prompt-composer:
 
@@ -23,7 +28,7 @@ To install comfyui-prompt-composer:
 3. digit: `git clone https://github.com/florestefano1975/comfyui-prompt-composer`
 4. restart ComfyUI
 
-### Manual update
+### Update
 
 To update comfyui-prompt-composer:
 

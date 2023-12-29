@@ -9,6 +9,27 @@ A suite of tools for prompt management.
 
 ![ComfyUI Prompt Composer Node](/screenshot/prompt-composer-overview.png)
 
+## Manual install
+
+To install comfyui-prompt-composer:
+
+1. open the terminal on the ComfyUI installation folder
+2. digit: `cd custom_nodes`
+3. digit: `git clone https://github.com/florestefano1975/comfyui-prompt-composer`
+4. restart ComfyUI
+
+### Manual update
+
+To update comfyui-portrait-master:
+
+1. open the terminal on the ComfyUI installation folder
+2. digit: `cd custom_nodes`
+3. digit: `cd comfyui-prompt-composer`
+4. digit: `git pull`
+5. restart ComfyUI
+
+**Warning: update command overwrites files modified and customized by users.**
+
 ## Single Text Node
 
 The single text node contains a typing box and a slider to adjust its weight.

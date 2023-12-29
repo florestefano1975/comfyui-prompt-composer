@@ -69,3 +69,9 @@ The combination of nodes helps the user compose their prompt in an orderly and l
 ## Customization
 
 The _lists_ folder contains TXT files with _Style_ and _Effect_ node list entries.
+
+## SDXL Turbo Workflow
+
+In the _workflow_ folder you can download and use an SDXL Turbo configuration with some of the custom nodes already inserted and ready to use.
+
+![Styler Node](/screenshot/sdxl-turbo-workflow.png)

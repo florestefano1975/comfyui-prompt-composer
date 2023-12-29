@@ -45,7 +45,7 @@ To update comfyui-prompt-composer:
 
 ## Usage
 
-Combining nodes helps the user sequence strings for prompts, also creating logical groupings if necessary. You can chain individual nodes in any order.
+Combining nodes helps the user sequence strings for prompts, also creating logical groupings if necessary. Individual nodes can be chained together in any order.
 
 ## Customization
 

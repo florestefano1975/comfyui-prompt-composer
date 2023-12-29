@@ -1,4 +1,4 @@
-# Comfyui Prompt Composer
+# ComfyUI Prompt Composer
 A suite of tools for prompt management.
 
 **_If this project is useful to you and you like it, please consider a small donation to the author._**

@@ -55,7 +55,7 @@ The _lists_ folder contains TXT files with _Style_ and _Effect_ node list entrie
 
 ## SDXL Turbo Workflow
 
-In the _workflow_ folder you can download and use an [SDXL Turbo configuration]((/workflow/prompt-composer-sdxl-turbo-workflow.json)) with some of the custom nodes already inserted and ready to use.
+In the _workflow_ folder you can download and use an [SDXL Turbo configuration](/workflow/prompt-composer-sdxl-turbo-workflow.json) with some of the custom nodes already inserted and ready to use.
 
 ![Styler Node](/screenshot/sdxl-turbo-workflow.png)
 

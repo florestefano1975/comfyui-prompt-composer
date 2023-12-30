@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.0
+# Version: 1.1
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -16,7 +16,15 @@ def pmReadTxt(file_path):
         values = [line.strip() for line in lines]
         return values
 
-# setup vars
+# Apply weight
+    
+def applyWeight(text, weight):
+    if weight == 1:
+        return text
+    else:
+        return f"({text}:{round(weight,2)})"
+
+# Setup vars
 
 effects = pmReadTxt(os.path.join(script_dir, "lists/effects.txt"))
 effects.sort()
@@ -59,7 +67,7 @@ class PromptComposerTextSingle:
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if text != "" and weight > 0:
-            prompt.append(f"({text}:{round(weight,2)})")
+            prompt.append(applyWeight(text, weight))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
@@ -150,17 +158,17 @@ class promptComposerTextMultiple:
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if text_1 != "" and weight_1 > 0:
-            prompt.append(f"({text_1}:{round(weight_1,2)})")
+            prompt.append(applyWeight(text_1, weight_1))
         if text_2 != "" and weight_2 > 0:
-            prompt.append(f"({text_2}:{round(weight_2,2)})")
+            prompt.append(applyWeight(text_2, weight_2))
         if text_3 != "" and weight_3 > 0:
-            prompt.append(f"({text_3}:{round(weight_3,2)})")
+            prompt.append(applyWeight(text_3, weight_3))
         if text_4 != "" and weight_4 > 0:
-            prompt.append(f"({text_4}:{round(weight_4,2)})")
+            prompt.append(applyWeight(text_4, weight_4))
         if text_5 != "" and weight_5 > 0:
-            prompt.append(f"({text_5}:{round(weight_5,2)})")
+            prompt.append(applyWeight(text_5, weight_5))
         if text_6 != "" and weight_3 > 0:
-            prompt.append(f"({text_6}:{round(weight_6,2)})")
+            prompt.append(applyWeight(text_6, weight_6))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()

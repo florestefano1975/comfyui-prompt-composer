@@ -69,7 +69,7 @@ class PromptComposerTextSingle:
 
 # Prompt Composer Text Node
 
-class PromptComposerTextMuliple:
+class promptComposerTextMultiple:
     def __init__(self):
         pass
     @classmethod
@@ -143,9 +143,9 @@ class PromptComposerTextMuliple:
         }
     RETURN_TYPES = ("TUPLE",)
     RETURN_NAMES = ("text_out",)
-    FUNCTION = "promptComposerTextMuliple"
+    FUNCTION = "promptComposerTextMultiple"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextMuliple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0):
+    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
@@ -294,7 +294,7 @@ class PromptComposerAssembler:
 
 NODE_CLASS_MAPPINGS = {
     "PromptComposerTextSingle": PromptComposerTextSingle,
-    "PromptComposerTextMuliple": PromptComposerTextMuliple,
+    "promptComposerTextMultiple": promptComposerTextMultiple,
     "PromptComposerStyler": PromptComposerStyler,
     "PromptComposerEffect": PromptComposerEffect,
     "PromptComposerAssembler": PromptComposerAssembler,
@@ -302,7 +302,7 @@ NODE_CLASS_MAPPINGS = {
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "PromptComposerTextSingle": "Prompt Composer Single Text",
-    "PromptComposerTextMuliple": "Prompt Composer Multiple Text",
+    "promptComposerTextMultiple": "Prompt Composer Multiple Text",
     "PromptComposerStyler": "Prompt Composer Styler",
     "PromptComposerEffect": "Prompt Composer Effect",
     "PromptComposerAssembler": "Prompt Composer Assembler",

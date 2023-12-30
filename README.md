@@ -67,3 +67,7 @@ In the _workflow_ folder you can download and use an [SDXL Turbo configuration](
 ## Notes
 
 For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
+
+## Other projects
+
+- [ComfyUI Portrait Master](https://github.com/florestefano1975/comfyui-portrait-master/)

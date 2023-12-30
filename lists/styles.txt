@@ -1,50 +1,57 @@
-Portrait
-Landscape
-Street
-Documentary
-Environmental Portrait
-Macro
-Abstract
-Fashion
-Still Life
-Travel
-Architectural
-Conceptual
-Night
-Underwater
-Food
-Wedding
-Pet Portrait
-Fine Art Conceptual
-Still Motion
-High Key
-Low Key
-Black and White
-High Dynamic Range (HDR)
-Cross Process
-Infrared
-Lomography
-Minimalist
-Bokeh
-Cinematic
-Double Exposure
-Toy Camera
-Time-Lapse
-Astrophotography
-Panoramic
-Experimental
-Light Painting
-Silhouette
-Candid
-Photojournalism
-Fashion Editorial
-Surreal
-Vintage
-Pinhole
-Holga
-Snapseed
-Vignette
-Polaroid
-Crosshatch
+Abstract Expressionism
+Acrylic Painting
+Anime
+Art Deco
+Biomorphic Abstraction
+Black and White Photograph
+Cartoon
+Charcoal Sketch
+Chibi Anime
+Chinese Painting
+Classicist Painting
 Collage
-Holochrome
+Concept Art
+Cyberpunk
+Dada Art
+Digital Art
+Fantasy Art
+Fashion Art
+Fashion Sketch
+Fish-Eye lens Photograph
+Goth Art
+Graffiti
+Harlem Renaissance
+High Key Photograph
+Hyperrealist Pencil Sketch
+Impressionist Painting
+Josei Anime
+Long Exposure Photograph
+Low Key Photograph
+Macro Photograph
+Manga
+Metal Sculpture
+Mid Century Modern Illustration
+Mixed Media
+Modern Art
+Moe Anime
+Nihonga
+Origami
+Paper Mache
+Pen and Ink
+Pencil Sketch
+Photograph
+Photorealism
+Pinup Art
+Romanticist Painting
+Sci-Fi Art
+Semi Realistic Fantasy Art
+Semi Realistic Cyberpunk Art
+Shallow Depth of Field Photograph
+Steam Punk Art
+Stone Sculpture
+Superhero Comic
+Surrealist Art
+Tempura Painting
+Underground Comic
+Watercolor Painting
+Zulu Urban Art

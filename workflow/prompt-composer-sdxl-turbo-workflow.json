@@ -1,6 +1,6 @@
 {
-  "last_node_id": 90,
-  "last_link_id": 184,
+  "last_node_id": 93,
+  "last_link_id": 189,
   "nodes": [
     {
       "id": 62,
@@ -140,70 +140,6 @@
       "locked": true
     },
     {
-      "id": 83,
-      "type": "PromptComposerAssembler",
-      "pos": [
-        790,
-        670
-      ],
-      "size": [
-        650,
-        130
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_1",
-          "type": "TUPLE",
-          "link": null
-        },
-        {
-          "name": "text_2",
-          "type": "TUPLE",
-          "link": null
-        },
-        {
-          "name": "text_3",
-          "type": "TUPLE",
-          "link": null
-        },
-        {
-          "name": "text_4",
-          "type": "TUPLE",
-          "link": null
-        },
-        {
-          "name": "text_5",
-          "type": "TUPLE",
-          "link": 182
-        },
-        {
-          "name": "text_6",
-          "type": "TUPLE",
-          "link": 183
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "links": [
-            179
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerAssembler"
-      },
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
       "id": 85,
       "type": "ShowText|pysssss",
       "pos": [
@@ -215,13 +151,13 @@
         210
       ],
       "flags": {},
-      "order": 13,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "link": 179,
+          "link": 189,
           "widget": {
             "name": "text"
           }
@@ -231,9 +167,7 @@
         {
           "name": "STRING",
           "type": "STRING",
-          "links": [
-            180
-          ],
+          "links": [],
           "shape": 6,
           "slot_index": 0
         }
@@ -243,8 +177,10 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(realistic photo, portrait head and shoulders:1.3), (cinese man 27-years-old:1), (detailed eyes:1.12), (muscular:1.16), (lomography style, lomography photography:1), (low key effect:1)"
+        "realistic photo, portrait head and shoulders, cinese man 27-years-old, detailed eyes, muscular"
       ],
+      "color": "#222",
+      "bgcolor": "#000",
       "locked": true
     },
     {
@@ -261,7 +197,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -361,10 +297,10 @@
         10,
         810
       ],
-      "size": [
-        390,
-        100
-      ],
+      "size": {
+        "0": 390,
+        "1": 100
+      },
       "flags": {},
       "order": 3,
       "mode": 0,
@@ -401,7 +337,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -412,7 +348,7 @@
         {
           "name": "text_g",
           "type": "STRING",
-          "link": 180,
+          "link": 187,
           "widget": {
             "name": "text_g"
           },
@@ -468,7 +404,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -540,7 +476,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 16,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -616,134 +552,20 @@
       "locked": true
     },
     {
-      "id": 25,
-      "type": "PreviewImage",
-      "pos": [
-        1450,
-        40
-      ],
-      "size": [
-        760,
-        760
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 169
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "color": "#323",
-      "bgcolor": "#535",
-      "locked": true
-    },
-    {
-      "id": 87,
-      "type": "PromptComposerStyler",
-      "pos": [
-        790,
-        550
-      ],
-      "size": [
-        310,
-        82
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "TUPLE",
-          "link": 184
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "TUPLE",
-          "links": [
-            182
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerStyler"
-      },
-      "widgets_values": [
-        "Lomography",
-        1
-      ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
-      "id": 88,
-      "type": "PromptComposerEffect",
-      "pos": [
-        1110,
-        550
-      ],
-      "size": [
-        330,
-        82
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "TUPLE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "TUPLE",
-          "links": [
-            183
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerEffect"
-      },
-      "widgets_values": [
-        "Low Key",
-        1
-      ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
       "id": 67,
       "type": "PrimitiveNode",
       "pos": [
         410,
         600
       ],
-      "size": [
-        330,
-        80
-      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
       "flags": {
         "collapsed": false
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -767,7 +589,101 @@
       ]
     },
     {
-      "id": 90,
+      "id": 92,
+      "type": "PromptComposerStyler",
+      "pos": [
+        790,
+        720
+      ],
+      "size": [
+        340,
+        80
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 188,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            186
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerStyler"
+      },
+      "widgets_values": [
+        "-",
+        1,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "locked": true
+    },
+    {
+      "id": 93,
+      "type": "PromptComposerEffect",
+      "pos": [
+        1140,
+        720
+      ],
+      "size": [
+        300,
+        80
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 186,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            187
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerEffect"
+      },
+      "widgets_values": [
+        "-",
+        1,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "locked": true
+    },
+    {
+      "id": 91,
       "type": "promptComposerTextMultiple",
       "pos": [
         790,
@@ -775,24 +691,28 @@
       ],
       "size": [
         650,
-        470.00000381469727
+        640
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
           "name": "text_in_opt",
-          "type": "TUPLE",
-          "link": null
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_in_opt"
+          }
         }
       ],
       "outputs": [
         {
           "name": "text_out",
-          "type": "TUPLE",
+          "type": "STRING",
           "links": [
-            184
+            188,
+            189
           ],
           "shape": 3,
           "slot_index": 0
@@ -803,17 +723,18 @@
       },
       "widgets_values": [
         "realistic photo, portrait head and shoulders",
-        1.3,
+        1,
         "cinese man 27-years-old",
         1,
         "detailed eyes",
-        1.12,
+        1,
         "muscular",
-        1.16,
+        1,
         "",
         1,
         "",
-        1
+        1,
+        ""
       ],
       "color": "#322",
       "bgcolor": "#533",
@@ -831,7 +752,7 @@
         210
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -855,8 +776,38 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "3d, cartoon, rendering, uglu, deformed"
+        "3d, cartoon, rendering, ugly, deformed"
       ],
+      "color": "#222",
+      "bgcolor": "#000",
+      "locked": true
+    },
+    {
+      "id": 25,
+      "type": "PreviewImage",
+      "pos": [
+        1450,
+        40
+      ],
+      "size": [
+        760,
+        760
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 169
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#323",
+      "bgcolor": "#535",
       "locked": true
     }
   ],
@@ -990,44 +941,36 @@
       "LATENT"
     ],
     [
-      179,
-      83,
+      186,
+      92,
       0,
-      85,
+      93,
       0,
       "STRING"
     ],
     [
-      180,
-      85,
+      187,
+      93,
       0,
       69,
       1,
       "STRING"
     ],
     [
-      182,
-      87,
+      188,
+      91,
       0,
-      83,
-      4,
-      "TUPLE"
+      92,
+      0,
+      "STRING"
     ],
     [
-      183,
-      88,
+      189,
+      91,
       0,
-      83,
-      5,
-      "TUPLE"
-    ],
-    [
-      184,
-      90,
+      85,
       0,
-      87,
-      0,
-      "TUPLE"
+      "STRING"
     ]
   ],
   "groups": [],

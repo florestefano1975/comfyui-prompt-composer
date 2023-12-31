@@ -26,7 +26,7 @@ To install comfyui-prompt-composer:
 1. open the terminal on the ComfyUI installation folder
 2. digit: `cd custom_nodes`
 3. digit: `git clone https://github.com/florestefano1975/comfyui-prompt-composer`
-4. restart ComfyUI
+4. start/restart ComfyUI
 
 ### Update
 
@@ -36,7 +36,7 @@ To update comfyui-prompt-composer:
 2. digit: `cd custom_nodes`
 3. digit: `cd comfyui-prompt-composer`
 4. digit: `git pull`
-5. restart ComfyUI
+5. start/restart ComfyUI
 
 **Warning: update command overwrites files modified and customized by users.**
 
@@ -46,7 +46,8 @@ To update comfyui-prompt-composer:
 - **Multiple Text Node**: contains six typing boxes with sliders to adjust their weights.
 - **Styler Node**: style selector from list and slider for set its weight.
 - **Effect Node**: effect selector from list and slider for set its weight.
-- **Assembler Node**: this node contains six entry points for text strings. The output is a full string prompt.
+- **Grouping Node**: encapsulates the input concatenated strings in brackets () and assigns a weight to the group.
+- **Merge Node**: this node joins two text strings.
 
 **Single Text Node**, **Multiple Text Node**, **Styler Node** and **Effect Node** have an entry point (__text_in_opt__) to concatenate unlimitedly with the other nodes.
 

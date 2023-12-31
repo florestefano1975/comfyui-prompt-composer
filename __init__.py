@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.1
+# Version: 1.3
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -43,7 +43,7 @@ class PromptComposerTextSingle:
     def INPUT_TYPES(s):
         return {
             "optional": {
-                "text_in_opt": ("TUPLE",),
+                "text_in_opt": ("STRING", {"forceInput": True}),
             },
             "required": {
                 "text": ("STRING", {
@@ -58,7 +58,7 @@ class PromptComposerTextSingle:
                 }),
             }
         }
-    RETURN_TYPES = ("TUPLE",)
+    RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextSingle"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
@@ -84,7 +84,7 @@ class promptComposerTextMultiple:
     def INPUT_TYPES(s):
         return {
             "optional": {
-                "text_in_opt": ("TUPLE",),
+                "text_in_opt": ("STRING", {"forceInput": True}),
             },
             "required": {
                 "text_1": ("STRING", {
@@ -149,7 +149,7 @@ class promptComposerTextMultiple:
                 }),
             }
         }
-    RETURN_TYPES = ("TUPLE",)
+    RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextMultiple"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
@@ -185,7 +185,7 @@ class PromptComposerStyler:
     def INPUT_TYPES(s):
         return {
             "optional": {
-                "text_in_opt": ("TUPLE",),
+                "text_in_opt": ("STRING", {"forceInput": True}),
             },
             "required": {
                 "style": (styles, {
@@ -200,7 +200,7 @@ class PromptComposerStyler:
                 }),
             },
         }
-    RETURN_TYPES = ("TUPLE",)
+    RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerStyler"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
@@ -226,7 +226,7 @@ class PromptComposerEffect:
     def INPUT_TYPES(s):
         return {
             "optional": {
-                "text_in_opt": ("TUPLE",),
+                "text_in_opt": ("STRING", {"forceInput": True}),
             },
             "required": {
                 "effect": (effects, {
@@ -241,7 +241,7 @@ class PromptComposerEffect:
                 }),
             },
         }
-    RETURN_TYPES = ("TUPLE",)
+    RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerEffect"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
@@ -258,45 +258,54 @@ class PromptComposerEffect:
         else:
             return("",)
 
-# Assembler Node
+# Merge Node
     
-class PromptComposerAssembler:
+class PromptComposerGrouping:
     def __init__(self):
         pass
     @classmethod
     def INPUT_TYPES(s):
         return {
-            "required": {},
-            "optional": {
-                "text_1": ("TUPLE",),
-                "text_2": ("TUPLE",),
-                "text_3": ("TUPLE",),
-                "text_4": ("TUPLE",),
-                "text_5": ("TUPLE",),
-                "text_6": ("TUPLE",),
+            "required": {
+                "text_in": ("STRING", {"forceInput": True}),
+                "weight": ("FLOAT", {
+                    "default": 1,
+                    "step": 0.05,
+                    "min": 0,
+                    "max": 1.95,
+                    "display": "slider",
+                }),
             }
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
-    FUNCTION = "promptComposerAssembler"
+    FUNCTION = "promptComposerGrouping"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerAssembler(self, text_1="", text_2="", text_3="", text_4="", text_5="", text_6=""):
-        prompt = []
-        if text_1 != "":
-            prompt.append(text_1)
-        if text_2 != "":
-            prompt.append(text_2)
-        if text_3 != "":
-            prompt.append(text_3)
-        if text_4 != "":
-            prompt.append(text_4)
-        if text_5 != "":
-            prompt.append(text_5)
-        if text_6 != "":
-            prompt.append(text_6)
-        prompt = ", ".join(prompt)
-        prompt = prompt.lower()
+    def promptComposerGrouping(self, text_in="", weight=0):
+        prompt = ""
+        if text_in != "" and weight > 0:
+            prompt = applyWeight(text_in, weight)
         return(prompt,)
+
+# Merge Node
+    
+class PromptComposerMerge:
+    def __init__(self):
+        pass
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "text_a": ("STRING", {"forceInput": True}),
+                "text_b": ("STRING", {"forceInput": True}),
+            }
+        }
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text_out",)
+    FUNCTION = "promptComposerMerge"
+    CATEGORY = "AI WizArt/Prompt Composer Tools"
+    def promptComposerMerge(self, text_a="", text_b=""):
+        return(text_a + ", " + text_b,)
 
 # Mapping
 
@@ -305,7 +314,8 @@ NODE_CLASS_MAPPINGS = {
     "promptComposerTextMultiple": promptComposerTextMultiple,
     "PromptComposerStyler": PromptComposerStyler,
     "PromptComposerEffect": PromptComposerEffect,
-    "PromptComposerAssembler": PromptComposerAssembler,
+    "PromptComposerGrouping": PromptComposerGrouping,
+    "PromptComposerMerge": PromptComposerMerge,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -313,5 +323,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "promptComposerTextMultiple": "Prompt Composer Multiple Text",
     "PromptComposerStyler": "Prompt Composer Styler",
     "PromptComposerEffect": "Prompt Composer Effect",
-    "PromptComposerAssembler": "Prompt Composer Assembler",
+    "PromptComposerGrouping": "Prompt Composer Grouping",
+    "PromptComposerMerge": "Prompt Composer Merge",
 }

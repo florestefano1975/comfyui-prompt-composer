@@ -57,7 +57,6 @@ Combining nodes helps the user sequence strings for prompts, also creating logic
 
 - Individual nodes can be chained together, in any order.
 - All _text_outs_ are simple text strings. You can also use nodes with other plugins.
-- Slider weights set to 0 deactivate the concatenation of the related text. Useful for temporarily disabling a portion of text.
 - Slider weights set to 1 do not encapsulate the related text in parentheses ().
 
 ## Customization

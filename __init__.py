@@ -51,7 +51,7 @@ class PromptComposerTextSingle:
                 }),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -93,7 +93,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_1": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -103,7 +103,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_2": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -113,7 +113,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_3": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -123,7 +123,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_4": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -133,7 +133,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_5": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -143,7 +143,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_6": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -196,7 +196,7 @@ class PromptComposerStyler:
                 "style_weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "display": "slider",
                 }),
@@ -238,7 +238,7 @@ class PromptComposerEffect:
                 "effect_weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "display": "slider",
                 }),
@@ -275,7 +275,7 @@ class PromptComposerGrouping:
                 "weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0,
+                    "min": 0.05,
                     "max": 1.95,
                     "display": "slider",
                 }),

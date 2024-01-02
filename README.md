@@ -49,7 +49,7 @@ To update comfyui-prompt-composer:
 - **Grouping Node**: encapsulates the input concatenated strings in brackets () and assigns a weight to the group.
 - **Merge Node**: this node joins two text strings.
 
-**Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes the _active_ switch for fast by-pass.
+**Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes, and _active_ switch option for fast by-pass.
 
 ## Usage
 

@@ -49,7 +49,7 @@ To update comfyui-prompt-composer:
 - **Grouping Node**: encapsulates the input concatenated strings in brackets () and assigns a weight to the group.
 - **Merge Node**: this node joins two text strings.
 
-**Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes.
+**Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes the _active_ switch for fast by-pass.
 
 ## Usage
 
@@ -59,7 +59,6 @@ Combining nodes helps the user sequence strings for prompts, also creating logic
 - All _text_outs_ are simple text strings. You can also use nodes with other plugins.
 - Slider weights set to 0 deactivate the concatenation of the related text. Useful for temporarily disabling a portion of text.
 - Slider weights set to 1 do not encapsulate the related text in parentheses ().
-- Compatible with  [ComfyUI Portrait Master](https://github.com/florestefano1975/comfyui-portrait-master/).
 
 ## Customization
 

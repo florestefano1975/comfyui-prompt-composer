@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.3
+# Version: 1.4
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -56,17 +56,18 @@ class PromptComposerTextSingle:
                     "step": 0.05,
                     "display": "slider"
                 }),
+                "active": ("BOOLEAN", {"default": False}),
             }
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextSingle"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextSingle(self, text_in_opt="", text="", weight=0):
+    def promptComposerTextSingle(self, text_in_opt="", text="", weight=0, active=True):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
-        if text != "" and weight > 0:
+        if text != "" and weight > 0 and active:
             prompt.append(applyWeight(text, weight))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
@@ -147,27 +148,28 @@ class promptComposerTextMultiple:
                     "step": 0.05,
                     "display": "slider"
                 }),
+                "active": ("BOOLEAN", {"default": False}),
             }
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextMultiple"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0):
+    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0, active=True):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
-        if text_1 != "" and weight_1 > 0:
+        if text_1 != "" and weight_1 > 0 and active:
             prompt.append(applyWeight(text_1, weight_1))
-        if text_2 != "" and weight_2 > 0:
+        if text_2 != "" and weight_2 > 0 and active:
             prompt.append(applyWeight(text_2, weight_2))
-        if text_3 != "" and weight_3 > 0:
+        if text_3 != "" and weight_3 > 0 and active:
             prompt.append(applyWeight(text_3, weight_3))
-        if text_4 != "" and weight_4 > 0:
+        if text_4 != "" and weight_4 > 0 and active:
             prompt.append(applyWeight(text_4, weight_4))
-        if text_5 != "" and weight_5 > 0:
+        if text_5 != "" and weight_5 > 0 and active:
             prompt.append(applyWeight(text_5, weight_5))
-        if text_6 != "" and weight_3 > 0:
+        if text_6 != "" and weight_3 > 0 and active:
             prompt.append(applyWeight(text_6, weight_6))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
@@ -198,18 +200,19 @@ class PromptComposerStyler:
                     "max": 1.95,
                     "display": "slider",
                 }),
+                "active": ("BOOLEAN", {"default": False}),
             },
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerStyler"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerStyler(self, text_in_opt="", style="-", style_weight=0):
+    def promptComposerStyler(self, text_in_opt="", style="-", style_weight=0, active=True):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
-        if style != '-' and style_weight > 0:
-            prompt.append(f"({style} style, {style} photography:{round(style_weight,2)})")
+        if style != '-' and style_weight > 0 and active:
+            prompt.append(f"({style} style:{round(style_weight,2)})")
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
@@ -239,17 +242,18 @@ class PromptComposerEffect:
                     "max": 1.95,
                     "display": "slider",
                 }),
+                "active": ("BOOLEAN", {"default": False}),
             },
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerEffect"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerEffect(self, text_in_opt="", effect="-", effect_weight=0):
+    def promptComposerEffect(self, text_in_opt="", effect="-", effect_weight=0, active=True):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
-        if effect != '-' and effect_weight > 0:
+        if effect != '-' and effect_weight > 0 and active:
             prompt.append(f"({effect} effect:{round(effect_weight,2)})")
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
@@ -275,15 +279,16 @@ class PromptComposerGrouping:
                     "max": 1.95,
                     "display": "slider",
                 }),
+                "active": ("BOOLEAN", {"default": False}),
             }
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerGrouping"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerGrouping(self, text_in="", weight=0):
-        prompt = ""
-        if text_in != "" and weight > 0:
+    def promptComposerGrouping(self, text_in="", weight=0, active=True):
+        prompt = text_in
+        if text_in != "" and weight > 0 and active:
             prompt = applyWeight(text_in, weight)
         return(prompt,)
 

@@ -1,6 +1,6 @@
 {
   "last_node_id": 93,
-  "last_link_id": 189,
+  "last_link_id": 192,
   "nodes": [
     {
       "id": 62,
@@ -140,50 +140,6 @@
       "locked": true
     },
     {
-      "id": 85,
-      "type": "ShowText|pysssss",
-      "pos": [
-        1450,
-        840
-      ],
-      "size": [
-        760,
-        210
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 189,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "title": "Show Positive Prompt",
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "realistic photo, portrait head and shoulders, cinese man 27-years-old, detailed eyes, muscular"
-      ],
-      "color": "#222",
-      "bgcolor": "#000",
-      "locked": true
-    },
-    {
       "id": 64,
       "type": "ModelMergeBlocks",
       "pos": [
@@ -246,7 +202,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -337,7 +293,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -520,7 +476,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -589,163 +545,11 @@
       ]
     },
     {
-      "id": 92,
-      "type": "PromptComposerStyler",
-      "pos": [
-        790,
-        720
-      ],
-      "size": [
-        340,
-        80
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": 188,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            186
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerStyler"
-      },
-      "widgets_values": [
-        "-",
-        1,
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
-      "id": 93,
-      "type": "PromptComposerEffect",
-      "pos": [
-        1140,
-        720
-      ],
-      "size": [
-        300,
-        80
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": 186,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            187
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerEffect"
-      },
-      "widgets_values": [
-        "-",
-        1,
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
-      "id": 91,
-      "type": "promptComposerTextMultiple",
-      "pos": [
-        790,
-        40
-      ],
-      "size": [
-        650,
-        640
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            188,
-            189
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "promptComposerTextMultiple"
-      },
-      "widgets_values": [
-        "realistic photo, portrait head and shoulders",
-        1,
-        "cinese man 27-years-old",
-        1,
-        "detailed eyes",
-        1,
-        "muscular",
-        1,
-        "",
-        1,
-        "",
-        1,
-        ""
-      ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
-    },
-    {
       "id": 7,
       "type": "CLIPTextEncode",
       "pos": [
         790,
-        840
+        870
       ],
       "size": [
         650,
@@ -783,6 +587,205 @@
       "locked": true
     },
     {
+      "id": 85,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1450,
+        870
+      ],
+      "size": [
+        760,
+        210
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 192,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "title": "Show Positive Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "realistic photo, portrait head and shoulders, cinese man 27-years-old, detailed eyes, muscular"
+      ],
+      "color": "#222",
+      "bgcolor": "#000",
+      "locked": true
+    },
+    {
+      "id": 91,
+      "type": "promptComposerTextMultiple",
+      "pos": [
+        790,
+        40
+      ],
+      "size": [
+        650,
+        640
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            190
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "promptComposerTextMultiple"
+      },
+      "widgets_values": [
+        "realistic photo, portrait head and shoulders",
+        1,
+        "cinese man 27-years-old",
+        1,
+        "detailed eyes",
+        1,
+        "muscular",
+        1,
+        "",
+        1,
+        "",
+        1,
+        true,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "locked": true
+    },
+    {
+      "id": 92,
+      "type": "PromptComposerStyler",
+      "pos": [
+        790,
+        720
+      ],
+      "size": [
+        340,
+        110
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 190,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            191
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerStyler"
+      },
+      "widgets_values": [
+        "-",
+        1.24,
+        false,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "locked": true
+    },
+    {
+      "id": 93,
+      "type": "PromptComposerEffect",
+      "pos": [
+        1140,
+        720
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 191,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            187,
+            192
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerEffect"
+      },
+      "widgets_values": [
+        "-",
+        0.72,
+        false,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "locked": true
+    },
+    {
       "id": 25,
       "type": "PreviewImage",
       "pos": [
@@ -791,7 +794,7 @@
       ],
       "size": [
         760,
-        760
+        790
       ],
       "flags": {},
       "order": 16,
@@ -941,14 +944,6 @@
       "LATENT"
     ],
     [
-      186,
-      92,
-      0,
-      93,
-      0,
-      "STRING"
-    ],
-    [
       187,
       93,
       0,
@@ -957,7 +952,7 @@
       "STRING"
     ],
     [
-      188,
+      190,
       91,
       0,
       92,
@@ -965,8 +960,16 @@
       "STRING"
     ],
     [
-      189,
-      91,
+      191,
+      92,
+      0,
+      93,
+      0,
+      "STRING"
+    ],
+    [
+      192,
+      93,
       0,
       85,
       0,

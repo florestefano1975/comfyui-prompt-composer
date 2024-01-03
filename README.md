@@ -54,7 +54,7 @@ To update comfyui-prompt-composer:
 
 Create the TXT files in the custom-lists folder and insert the selector entries into each of them. You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
 
-**Important: when making changes to the custom lists folder you must restart ComfyUI.**
+**Important: changes inserted into the custom lists folder require restarting ComfyUI.**
 
 ## Deprecated Nodes
 

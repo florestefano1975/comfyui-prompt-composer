@@ -4,6 +4,7 @@ Version 1.5
 
 - Add _Custom Lists_ node
 - Nodes _Effect_ and _Styler_ are deprecated and will not receive future updates
+- Bug fix and optimizations
 
 ## 02.01.2024
 

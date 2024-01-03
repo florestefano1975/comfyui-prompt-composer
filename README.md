@@ -38,7 +38,7 @@ To update comfyui-prompt-composer:
 4. digit: `git pull`
 5. start/restart ComfyUI
 
-**Warning: update command overwrites files modified and customized by users.**
+**Warning: before the update create a backup of the TXT files contained in the _custom-list_ folders.**
 
 ## Node List
 

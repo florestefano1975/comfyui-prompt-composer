@@ -50,6 +50,10 @@ To update comfyui-prompt-composer:
 
 **Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes, and _active_ switch option for fast by-pass.
 
+## Custom Lists Node
+
+Create the TXT files in the custom-lists folder and insert the selector entries into each of them. You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
+
 ## Deprecated Nodes
 
 Nodes **Effect** and **Styler** are deprecated and will not receive future updates.
@@ -61,10 +65,6 @@ Combining nodes helps the user sequence strings for prompts, also creating logic
 - Individual nodes can be chained together, in any order.
 - All _text_outs_ are simple text strings. You can also use nodes with other plugins.
 - Slider weights set to 1 do not encapsulate the related text in parentheses ().
-
-### Custom Lists Node
-
-Create the TXT files in the custom-lists folder and insert the selector entries into each of them. You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
 
 **Important**: when making changes to the custom lists folder you must restart ComfyUI.
 

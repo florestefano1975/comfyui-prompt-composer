@@ -32,7 +32,7 @@ To install comfyui-prompt-composer:
 
 To update comfyui-prompt-composer:
 
-1. open the terminal on the ComfyUI installation folder
+1. open the terminal on the comfyui-prompt-composer folder
 2. digit: `cd custom_nodes`
 3. digit: `cd comfyui-prompt-composer`
 4. digit: `git pull`
@@ -42,14 +42,17 @@ To update comfyui-prompt-composer:
 
 ## Node List
 
+- **Custom Lists Node**: this node reads the lists contained in the _custom-lists_ folder and creates a selector/weight pair for each.
 - **Single Text Node**: contains a typing box and a slider to adjust its weight.
 - **Multiple Text Node**: contains six typing boxes with sliders to adjust their weights.
-- **Styler Node**: style selector from list and slider for set its weight.
-- **Effect Node**: effect selector from list and slider for set its weight.
 - **Grouping Node**: encapsulates the input concatenated strings in brackets () and assigns a weight to the group.
 - **Merge Node**: this node joins two text strings.
 
 **Single Text Node**, **Multiple Text Node**, **Styler Node**, **Effect Node** and **Grouping Node** have an entry point (_text_in_opt_) to concatenate unlimitedly with the other nodes, and _active_ switch option for fast by-pass.
+
+## Deprecated Nodes
+
+Nodes **Effect** and **Styler** are deprecated and will not receive future updates.
 
 ## Usage
 
@@ -58,6 +61,12 @@ Combining nodes helps the user sequence strings for prompts, also creating logic
 - Individual nodes can be chained together, in any order.
 - All _text_outs_ are simple text strings. You can also use nodes with other plugins.
 - Slider weights set to 1 do not encapsulate the related text in parentheses ().
+
+### Custom Lists Node
+
+Create the TXT files in the custom-lists folder and insert the selector entries into each of them.
+
+You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
 
 ## Customization
 

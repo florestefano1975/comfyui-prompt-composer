@@ -1,6 +1,6 @@
 {
-  "last_node_id": 218,
-  "last_link_id": 276,
+  "last_node_id": 232,
+  "last_link_id": 292,
   "nodes": [
     {
       "id": 212,
@@ -14,7 +14,7 @@
         "1": 123.3364486694336
       },
       "flags": {},
-      "order": 4,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -45,201 +45,6 @@
       ],
       "color": "#222",
       "bgcolor": "#000"
-    },
-    {
-      "id": 204,
-      "type": "promptComposerTextMultiple",
-      "pos": [
-        440,
-        230
-      ],
-      "size": {
-        "0": 372.1609802246094,
-        "1": 494
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": 243,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            245
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "promptComposerTextMultiple"
-      },
-      "widgets_values": [
-        "Mickey",
-        0.67,
-        "Mouse",
-        1.35,
-        "",
-        0.8,
-        "",
-        0.56,
-        "",
-        1.25,
-        "",
-        1.27,
-        false,
-        ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 209,
-      "type": "ShowText|pysssss",
-      "pos": [
-        1530,
-        230
-      ],
-      "size": {
-        "0": 627.21533203125,
-        "1": 189.89332580566406
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 257,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            274
-          ],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "((donald:1.34), (high key effect:1.23):1.23)"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 218,
-      "type": "ShowText|pysssss",
-      "pos": [
-        1360,
-        640
-      ],
-      "size": {
-        "0": 508.84271240234375,
-        "1": 196.6652069091797
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 275,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "(paperinik:0.62), (polarizer effect:0.76), ((donald:1.34), (high key effect:1.23):1.23)"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 217,
-      "type": "PromptComposerMerge",
-      "pos": [
-        1020,
-        640
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_a",
-          "type": "STRING",
-          "link": 276,
-          "widget": {
-            "name": "text_a"
-          }
-        },
-        {
-          "name": "text_b",
-          "type": "STRING",
-          "link": 274,
-          "widget": {
-            "name": "text_b"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            275
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PromptComposerMerge"
-      },
-      "widgets_values": [
-        "",
-        ""
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 208,
@@ -300,7 +105,7 @@
         "1": 106
       },
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -336,11 +141,160 @@
       "bgcolor": "#533"
     },
     {
+      "id": 205,
+      "type": "PromptComposerEffect",
+      "pos": [
+        860,
+        230
+      ],
+      "size": {
+        "0": 259.5519714355469,
+        "1": 106
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 245,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            264
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerEffect"
+      },
+      "widgets_values": [
+        "High Key",
+        1.23,
+        true,
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 204,
+      "type": "promptComposerTextMultiple",
+      "pos": [
+        440,
+        230
+      ],
+      "size": {
+        "0": 372.1609802246094,
+        "1": 494
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 243,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            245
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "promptComposerTextMultiple"
+      },
+      "widgets_values": [
+        "Mickey",
+        0.67,
+        "Mouse",
+        1.35,
+        "",
+        0.8,
+        "",
+        0.56,
+        "",
+        1.25,
+        "",
+        1.27,
+        true,
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 206,
+      "type": "PromptComposerGrouping",
+      "pos": [
+        1200,
+        230
+      ],
+      "size": {
+        "0": 284.4999694824219,
+        "1": 82
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in",
+          "type": "STRING",
+          "link": 264,
+          "widget": {
+            "name": "text_in"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            257
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerGrouping"
+      },
+      "widgets_values": [
+        "",
+        1.26,
+        true
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
       "id": 201,
       "type": "PromptComposerTextSingle",
       "pos": [
-        20,
-        230
+        -31,
+        293
       ],
       "size": {
         "0": 363.37799072265625,
@@ -383,74 +337,209 @@
       "bgcolor": "#353"
     },
     {
-      "id": 205,
-      "type": "PromptComposerEffect",
+      "id": 217,
+      "type": "PromptComposerMerge",
       "pos": [
-        860,
-        230
+        1101,
+        534
       ],
       "size": {
-        "0": 259.5519714355469,
-        "1": 106
+        "0": 315,
+        "1": 82
       },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 276,
+          "widget": {
+            "name": "text_a"
+          }
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 274,
+          "widget": {
+            "name": "text_b"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            275
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptComposerMerge"
+      },
+      "widgets_values": [
+        "",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 209,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1530,
+        230
+      ],
+      "size": [
+        421.20916723632763,
+        191.99838360595686
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 257,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            274
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "((donald:1.34), (mickey:0.67), (mouse:1.35), (high key effect:1.23):1.26)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 218,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1552,
+        560
+      ],
+      "size": [
+        418.56917236328036,
+        187.7303840637204
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 275,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(paperinik:0.62), (polarizer effect:0.76), ((donald:1.34), (mickey:0.67), (mouse:1.35), (high key effect:1.23):1.26)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 222,
+      "type": "ShowText|pysssss",
+      "pos": [
+        966,
+        810
+      ],
+      "size": [
+        479.4291723632807,
+        167.63038406372027
+      ],
       "flags": {},
       "order": 5,
       "mode": 0,
       "inputs": [
         {
-          "name": "text_in_opt",
+          "name": "text",
           "type": "STRING",
-          "link": 245,
+          "link": 292,
           "widget": {
-            "name": "text_in_opt"
+            "name": "text"
           }
         }
       ],
       "outputs": [
         {
-          "name": "text_out",
+          "name": "STRING",
           "type": "STRING",
-          "links": [
-            264
-          ],
-          "shape": 3,
+          "links": [],
+          "shape": 6,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "PromptComposerEffect"
+        "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "High Key",
-        1.23,
-        true,
-        ""
+        "(high key:1.25), (wide-angle photo:1.11), (black and white photo:1.21)"
       ],
-      "color": "#232",
-      "bgcolor": "#353"
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
-      "id": 206,
-      "type": "PromptComposerGrouping",
+      "id": 221,
+      "type": "PromptComposerCustomLists",
       "pos": [
-        1200,
-        230
+        410,
+        800
       ],
-      "size": {
-        "0": 284.4999694824219,
-        "1": 82
-      },
+      "size": [
+        413.96136474609375,
+        250
+      ],
       "flags": {},
-      "order": 6,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
-          "name": "text_in",
+          "name": "text_in_opt",
           "type": "STRING",
-          "link": 264,
+          "link": null,
           "widget": {
-            "name": "text_in"
-          }
+            "name": "text_in_opt"
+          },
+          "slot_index": 0
         }
       ],
       "outputs": [
@@ -458,22 +547,29 @@
           "name": "text_out",
           "type": "STRING",
           "links": [
-            257
+            292
           ],
           "shape": 3,
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "PromptComposerGrouping"
+        "Node name for S&R": "PromptComposerCustomLists"
       },
       "widgets_values": [
-        "",
-        1.23,
-        true
+        "High Key",
+        1.25,
+        "wide-angle photo",
+        1.11,
+        "-",
+        1,
+        "Black and white photo",
+        1.21,
+        true,
+        ""
       ],
-      "color": "#232",
-      "bgcolor": "#353"
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -546,6 +642,14 @@
       212,
       0,
       217,
+      0,
+      "STRING"
+    ],
+    [
+      292,
+      221,
+      0,
+      222,
       0,
       "STRING"
     ]

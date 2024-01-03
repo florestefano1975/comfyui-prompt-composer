@@ -1,0 +1,4 @@
+Color photo
+Black and white photo
+Sepia photo
+Duotone photo

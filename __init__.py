@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.4
+# Version: 1.5
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -15,6 +15,29 @@ def pmReadTxt(file_path):
         lines = file.readlines()
         values = [line.strip() for line in lines]
         return values
+
+# Custom lists
+
+custom_lists = {}
+    
+def customLists(folder):
+    for filename in os.listdir(folder):
+        filepath = os.path.join(folder, filename)
+        if os.path.isfile(filepath) and filename.lower().endswith('.txt'):
+            values = pmReadTxt(script_dir + "/custom-lists/" + filename)
+            values = ['-'] + values
+            filename = os.path.splitext(filename)[0]
+            custom_lists[str(filename)] = (values, { "default" : values[0]})
+            custom_lists[str(filename) + "_weight"] = ("FLOAT", {
+                "default": 1,
+                "min": 0,
+                "max": 1.95,
+                "step": 0.05,
+                "display": "slider"
+            })
+    custom_lists["active"] = ("BOOLEAN", {"default": True})
+
+customLists(script_dir + "/custom-lists")
 
 # Apply weight
     
@@ -34,6 +57,40 @@ styles = pmReadTxt(os.path.join(script_dir, "lists/styles.txt"))
 styles.sort()
 styles = ['-'] + styles
 
+# Prompt Composer Custom Lists
+
+class PromptComposerCustomLists:
+    def __init__(self):
+        pass
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "optional": {
+                "text_in_opt": ("STRING", {"forceInput": True}),
+            },
+            "required": custom_lists
+        }
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text_out",)
+    FUNCTION = "promptComposerCustomLists"
+    CATEGORY = "AI WizArt/Prompt Composer Tools"
+    
+    def promptComposerCustomLists(self, text_in_opt="", **kwargs):
+        prompt = []
+        if text_in_opt != "":
+            prompt.append(text_in_opt)
+        if kwargs["active"] == True:
+            for key in kwargs.keys():
+                if "_weight" not in str(key) and "active" not in str(key):
+                    if kwargs[key] != "-" and kwargs[key + "_weight"] > 0:
+                        prompt.append(applyWeight(kwargs[key], kwargs[key + "_weight"]))
+        if len(prompt) > 0:
+            prompt = ", ".join(prompt)
+            prompt = prompt.lower()
+            return(prompt,)
+        else:
+            return("",)
+
 # Prompt Composer Single Text Node
 
 class PromptComposerTextSingle:
@@ -51,7 +108,7 @@ class PromptComposerTextSingle:
                 }),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -93,7 +150,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_1": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -103,7 +160,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_2": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -113,7 +170,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_3": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -123,7 +180,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_4": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -133,7 +190,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_5": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -143,7 +200,7 @@ class promptComposerTextMultiple:
                 }),
                 "weight_6": ("FLOAT", {
                     "default": 1,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "step": 0.05,
                     "display": "slider"
@@ -196,7 +253,7 @@ class PromptComposerStyler:
                 "style_weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "display": "slider",
                 }),
@@ -206,7 +263,7 @@ class PromptComposerStyler:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerStyler"
-    CATEGORY = "AI WizArt/Prompt Composer Tools"
+    CATEGORY = "AI WizArt/Prompt Composer Tools/Deprecated"
     def promptComposerStyler(self, text_in_opt="", style="-", style_weight=0, active=True):
         prompt = []
         if text_in_opt != "":
@@ -238,7 +295,7 @@ class PromptComposerEffect:
                 "effect_weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "display": "slider",
                 }),
@@ -248,7 +305,7 @@ class PromptComposerEffect:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerEffect"
-    CATEGORY = "AI WizArt/Prompt Composer Tools"
+    CATEGORY = "AI WizArt/Prompt Composer Tools/Deprecated"
     def promptComposerEffect(self, text_in_opt="", effect="-", effect_weight=0, active=True):
         prompt = []
         if text_in_opt != "":
@@ -262,7 +319,7 @@ class PromptComposerEffect:
         else:
             return("",)
 
-# Merge Node
+# Grouping Node
     
 class PromptComposerGrouping:
     def __init__(self):
@@ -275,7 +332,7 @@ class PromptComposerGrouping:
                 "weight": ("FLOAT", {
                     "default": 1,
                     "step": 0.05,
-                    "min": 0.05,
+                    "min": 0,
                     "max": 1.95,
                     "display": "slider",
                 }),
@@ -315,6 +372,7 @@ class PromptComposerMerge:
 # Mapping
 
 NODE_CLASS_MAPPINGS = {
+    "PromptComposerCustomLists": PromptComposerCustomLists,
     "PromptComposerTextSingle": PromptComposerTextSingle,
     "promptComposerTextMultiple": promptComposerTextMultiple,
     "PromptComposerStyler": PromptComposerStyler,
@@ -324,10 +382,11 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
+    "PromptComposerCustomLists": "Prompt Composer Custom Lists",
     "PromptComposerTextSingle": "Prompt Composer Single Text",
     "promptComposerTextMultiple": "Prompt Composer Multiple Text",
-    "PromptComposerStyler": "Prompt Composer Styler",
-    "PromptComposerEffect": "Prompt Composer Effect",
+    "PromptComposerStyler": "Prompt Composer Styler (deprecated!)",
+    "PromptComposerEffect": "Prompt Composer Effect (deprecated!)",
     "PromptComposerGrouping": "Prompt Composer Grouping",
     "PromptComposerMerge": "Prompt Composer Merge",
 }

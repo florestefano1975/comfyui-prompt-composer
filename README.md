@@ -64,9 +64,9 @@ Combining nodes helps the user sequence strings for prompts, also creating logic
 
 ### Custom Lists Node
 
-Create the TXT files in the custom-lists folder and insert the selector entries into each of them.
+Create the TXT files in the custom-lists folder and insert the selector entries into each of them. You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
 
-You can create lists with simple items or libraries with entire prompts, so you can reuse and combine them as you like.
+**Important**: when making changes to the custom lists folder you must restart ComfyUI.
 
 ## Customization
 

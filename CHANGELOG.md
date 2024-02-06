@@ -1,3 +1,10 @@
+## 06.02.2024
+
+Version 1.6
+
+- Prompt Composer Multiple Text now has 10 slots
+- Bug fix and optimizations
+
 ## 03.01.2024
 
 Version 1.5

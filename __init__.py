@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.5
+# Version: 1.6
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -205,6 +205,46 @@ class promptComposerTextMultiple:
                     "step": 0.05,
                     "display": "slider"
                 }),
+                "text_7": ("STRING", {
+                    "multiline": True
+                }),
+                "weight_7": ("FLOAT", {
+                    "default": 1,
+                    "min": 0,
+                    "max": 1.95,
+                    "step": 0.05,
+                    "display": "slider"
+                }),
+                "text_8": ("STRING", {
+                    "multiline": True
+                }),
+                "weight_8": ("FLOAT", {
+                    "default": 1,
+                    "min": 0,
+                    "max": 1.95,
+                    "step": 0.05,
+                    "display": "slider"
+                }),
+                "text_9": ("STRING", {
+                    "multiline": True
+                }),
+                "weight_9": ("FLOAT", {
+                    "default": 1,
+                    "min": 0,
+                    "max": 1.95,
+                    "step": 0.05,
+                    "display": "slider"
+                }),
+                "text_10": ("STRING", {
+                    "multiline": True
+                }),
+                "weight_10": ("FLOAT", {
+                    "default": 1,
+                    "min": 0,
+                    "max": 1.95,
+                    "step": 0.05,
+                    "display": "slider"
+                }),
                 "active": ("BOOLEAN", {"default": False}),
             }
         }
@@ -212,7 +252,7 @@ class promptComposerTextMultiple:
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextMultiple"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0, active=True):
+    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0, text_7="", weight_7=0, text_8="", weight_8=0, text_9="", weight_9=0, text_10="", weight_10=0, active=True):
         prompt = []
         if text_in_opt != "":
             prompt.append(text_in_opt)
@@ -226,8 +266,16 @@ class promptComposerTextMultiple:
             prompt.append(applyWeight(text_4, weight_4))
         if text_5 != "" and weight_5 > 0 and active:
             prompt.append(applyWeight(text_5, weight_5))
-        if text_6 != "" and weight_3 > 0 and active:
+        if text_6 != "" and weight_6 > 0 and active:
             prompt.append(applyWeight(text_6, weight_6))
+        if text_7 != "" and weight_7 > 0 and active:
+            prompt.append(applyWeight(text_7, weight_7))
+        if text_8 != "" and weight_8 > 0 and active:
+            prompt.append(applyWeight(text_8, weight_8))
+        if text_9 != "" and weight_9 > 0 and active:
+            prompt.append(applyWeight(text_9, weight_9))
+        if text_10 != "" and weight_10 > 0 and active:
+            prompt.append(applyWeight(text_10, weight_10))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()

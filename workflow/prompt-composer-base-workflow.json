@@ -3,50 +3,6 @@
   "last_link_id": 292,
   "nodes": [
     {
-      "id": 212,
-      "type": "ShowText|pysssss",
-      "pos": [
-        670,
-        40
-      ],
-      "size": {
-        "0": 590.0771484375,
-        "1": 123.3364486694336
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 259,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            276
-          ],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "(paperinik:0.62), (polarizer effect:0.76)"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
       "id": 208,
       "type": "PromptComposerTextSingle",
       "pos": [
@@ -101,7 +57,7 @@
         40
       ],
       "size": {
-        "0": 259.5519714355469,
+        "0": 302.3999938964844,
         "1": 106
       },
       "flags": {},
@@ -148,7 +104,7 @@
         230
       ],
       "size": {
-        "0": 259.5519714355469,
+        "0": 302.3999938964844,
         "1": 106
       },
       "flags": {},
@@ -181,62 +137,6 @@
       "widgets_values": [
         "High Key",
         1.23,
-        true,
-        ""
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 204,
-      "type": "promptComposerTextMultiple",
-      "pos": [
-        440,
-        230
-      ],
-      "size": {
-        "0": 372.1609802246094,
-        "1": 494
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": 243,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            245
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "promptComposerTextMultiple"
-      },
-      "widgets_values": [
-        "Mickey",
-        0.67,
-        "Mouse",
-        1.35,
-        "",
-        0.8,
-        "",
-        0.56,
-        "",
-        1.25,
-        "",
-        1.27,
         true,
         ""
       ],
@@ -396,10 +296,10 @@
         1530,
         230
       ],
-      "size": [
-        421.20916723632763,
-        191.99838360595686
-      ],
+      "size": {
+        "0": 420,
+        "1": 190
+      },
       "flags": {},
       "order": 9,
       "mode": 0,
@@ -428,7 +328,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "((donald:1.34), (mickey:0.67), (mouse:1.35), (high key effect:1.23):1.26)"
+        "((donald:1.34), (mickey:0.67), (mouse:1.04), (high key effect:1.23):1.26)"
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -440,10 +340,10 @@
         1552,
         560
       ],
-      "size": [
-        418.56917236328036,
-        187.7303840637204
-      ],
+      "size": {
+        "0": 420,
+        "1": 190
+      },
       "flags": {},
       "order": 11,
       "mode": 0,
@@ -470,7 +370,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(paperinik:0.62), (polarizer effect:0.76), ((donald:1.34), (mickey:0.67), (mouse:1.35), (high key effect:1.23):1.26)"
+        "(paperinik:0.62), (polarizer effect:0.76), ((donald:1.34), (mickey:0.67), (mouse:1.04), (high key effect:1.23):1.26)"
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -482,10 +382,10 @@
         966,
         810
       ],
-      "size": [
-        479.4291723632807,
-        167.63038406372027
-      ],
+      "size": {
+        "0": 480,
+        "1": 170
+      },
       "flags": {},
       "order": 5,
       "mode": 0,
@@ -522,12 +422,12 @@
       "type": "PromptComposerCustomLists",
       "pos": [
         410,
-        800
+        1110
       ],
-      "size": [
-        413.96136474609375,
-        250
-      ],
+      "size": {
+        "0": 413.96136474609375,
+        "1": 250
+      },
       "flags": {},
       "order": 2,
       "mode": 0,
@@ -570,6 +470,114 @@
       ],
       "color": "#323",
       "bgcolor": "#535"
+    },
+    {
+      "id": 212,
+      "type": "ShowText|pysssss",
+      "pos": [
+        720,
+        50
+      ],
+      "size": {
+        "0": 590,
+        "1": 120
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 259,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            276
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(paperinik:0.62), (polarizer effect:0.76)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 204,
+      "type": "promptComposerTextMultiple",
+      "pos": [
+        440,
+        230
+      ],
+      "size": {
+        "0": 372.1609802246094,
+        "1": 790
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": 243,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            245
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "promptComposerTextMultiple"
+      },
+      "widgets_values": [
+        "Mickey",
+        0.67,
+        "Mouse",
+        1.04,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        true,
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     }
   ],
   "links": [

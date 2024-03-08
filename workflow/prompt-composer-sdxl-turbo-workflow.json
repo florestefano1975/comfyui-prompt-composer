@@ -46,8 +46,7 @@
       },
       "widgets_values": [
         "FormulaXL 2.0.safetensors"
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 5,
@@ -82,8 +81,7 @@
         512,
         512,
         1
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 20,
@@ -136,8 +134,7 @@
       },
       "widgets_values": [
         "sd_xl_turbo_1.0_fp16.safetensors"
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 64,
@@ -185,8 +182,7 @@
         0.9,
         0.9,
         0.4
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 65,
@@ -243,8 +239,7 @@
         "LCM_LoRA_Weights.safetensors",
         0.3,
         1
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 71,
@@ -343,8 +338,7 @@
         1024,
         "cute, mecha spider",
         ""
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 46,
@@ -415,8 +409,7 @@
         "lcm",
         "normal",
         1
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 8,
@@ -459,8 +452,7 @@
       ],
       "properties": {
         "Node name for S&R": "VAEDecode"
-      },
-      "locked": true
+      }
     },
     {
       "id": 55,
@@ -504,8 +496,7 @@
         1.49,
         1.3,
         0.6
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 67,
@@ -516,7 +507,7 @@
       ],
       "size": {
         "0": 210,
-        "1": 82
+        "1": 80
       },
       "flags": {
         "collapsed": false
@@ -545,53 +536,11 @@
       ]
     },
     {
-      "id": 7,
-      "type": "CLIPTextEncode",
-      "pos": [
-        790,
-        870
-      ],
-      "size": [
-        650,
-        210
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 39
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            104
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Negative prompt",
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "3d, cartoon, rendering, ugly, deformed"
-      ],
-      "color": "#222",
-      "bgcolor": "#000",
-      "locked": true
-    },
-    {
       "id": 85,
       "type": "ShowText|pysssss",
       "pos": [
         1450,
-        870
+        1020
       ],
       "size": [
         760,
@@ -624,76 +573,17 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "realistic photo, portrait head and shoulders, cinese man 27-years-old, detailed eyes, muscular"
-      ],
-      "color": "#222",
-      "bgcolor": "#000",
-      "locked": true
-    },
-    {
-      "id": 91,
-      "type": "promptComposerTextMultiple",
-      "pos": [
-        790,
-        40
-      ],
-      "size": [
-        650,
-        640
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text_in_opt",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "text_in_opt"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "text_out",
-          "type": "STRING",
-          "links": [
-            190
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "promptComposerTextMultiple"
-      },
-      "widgets_values": [
-        "realistic photo, portrait head and shoulders",
-        1,
-        "cinese man 27-years-old",
-        1,
-        "detailed eyes",
-        1,
-        "muscular",
-        1,
-        "",
-        1,
-        "",
-        1,
-        true,
         ""
       ],
-      "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 92,
       "type": "PromptComposerStyler",
       "pos": [
         790,
-        720
+        870
       ],
       "size": [
         340,
@@ -733,15 +623,14 @@
         ""
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
+      "bgcolor": "#533"
     },
     {
       "id": 93,
       "type": "PromptComposerEffect",
       "pos": [
         1140,
-        720
+        870
       ],
       "size": [
         300,
@@ -782,8 +671,48 @@
         ""
       ],
       "color": "#322",
-      "bgcolor": "#533",
-      "locked": true
+      "bgcolor": "#533"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        790,
+        1020
+      ],
+      "size": [
+        650,
+        210
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            104
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Negative prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "3d, cartoon, rendering, ugly, deformed"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
     },
     {
       "id": 25,
@@ -794,7 +723,7 @@
       ],
       "size": [
         760,
-        790
+        940
       ],
       "flags": {},
       "order": 16,
@@ -810,8 +739,72 @@
         "Node name for S&R": "PreviewImage"
       },
       "color": "#323",
-      "bgcolor": "#535",
-      "locked": true
+      "bgcolor": "#535"
+    },
+    {
+      "id": 91,
+      "type": "promptComposerTextMultiple",
+      "pos": [
+        790,
+        40
+      ],
+      "size": [
+        650,
+        790
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_in_opt",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_in_opt"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_out",
+          "type": "STRING",
+          "links": [
+            190
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "promptComposerTextMultiple"
+      },
+      "widgets_values": [
+        "realistic photo, portrait head and shoulders",
+        1,
+        "cinese man 27-years-old",
+        1,
+        "detailed eyes",
+        1,
+        "muscular",
+        1,
+        "",
+        0,
+        "",
+        0,
+        "",
+        "",
+        "",
+        0,
+        "",
+        0,
+        "",
+        0,
+        false,
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
     }
   ],
   "links": [

@@ -85,3 +85,4 @@ For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/model
 ## Other projects
 
 - [ComfyUI Portrait Master](https://github.com/florestefano1975/comfyui-portrait-master/)
+- [ComfyUI StabilityAI Suite](https://github.com/florestefano1975/ComfyUI-StabilityAI-Suite/)

@@ -491,11 +491,11 @@ for folder_name, widget_data in sub_custom_lists.items():
         'FUNCTION': "generatePrompt",
         'CATEGORY': f"AI WizArt/Prompt Composer Tools",
         
-        'INPUT_TYPES': classmethod(lambda cls: {
+        'INPUT_TYPES': classmethod(lambda cls, widget_data=widget_data: {
             "optional": {
                 "text_in_opt": ("STRING", {"forceInput": True}),
             },
-            "required": widget_data 
+            "required": widget_data
         }),
         'generatePrompt': generatePrompt
     }

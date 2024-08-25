@@ -6,6 +6,14 @@
 
 import os
 
+# Weight min, max and step values
+WEIGHT_MIN = 0
+WEIGHT_MAX = 1.95
+WEIGHT_STEP = 0.05
+
+# Weight display format (number or slider)
+WEIGHT_DISPLAY = "slider"
+
 script_dir = os.path.dirname(__file__)
 
 # Read txt file
@@ -32,10 +40,10 @@ def customLists(folder):
             custom_lists[str(filename)] = (values, { "default" : values[0]})
             custom_lists[str(filename) + "_weight"] = ("FLOAT", {
                 "default": 1,
-                "min": 0,
-                "max": 1.95,
-                "step": 0.05,
-                "display": "slider"
+                "min": WEIGHT_MIN,
+                "max": WEIGHT_MAX,
+                "step": WEIGHT_STEP,
+                "display": WEIGHT_DISPLAY
             })
 
     custom_lists["active"] = ("BOOLEAN", {"default": True})
@@ -59,18 +67,8 @@ def subCustomLists(folder):
 
 sub_custom_lists = subCustomLists(script_dir + "/custom-lists")
 
-# Dump sub_custom_lists variable to console and stop app execution
-# print(custom_lists)
-# print("\n\n")
-# print(sub_custom_lists)
-# raise SystemExit
 
-
-
-
-
-# Apply weight
-    
+# Apply weight    
 def applyWeight(text, weight):
     if weight == 1:
         return text
@@ -138,10 +136,10 @@ class PromptComposerTextSingle:
                 }),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }
@@ -180,100 +178,100 @@ class promptComposerTextMultiple:
                 }),
                 "weight_1": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_2": ("STRING", {
                     "multiline": True
                 }),
                 "weight_2": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_3": ("STRING", {
                     "multiline": True
                 }),
                 "weight_3": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_4": ("STRING", {
                     "multiline": True
                 }),
                 "weight_4": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_5": ("STRING", {
                     "multiline": True
                 }),
                 "weight_5": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_6": ("STRING", {
                     "multiline": True
                 }),
                 "weight_6": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_7": ("STRING", {
                     "multiline": True
                 }),
                 "weight_7": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_8": ("STRING", {
                     "multiline": True
                 }),
                 "weight_8": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_9": ("STRING", {
                     "multiline": True
                 }),
                 "weight_9": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_10": ("STRING", {
                     "multiline": True
                 }),
                 "weight_10": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }
@@ -330,10 +328,10 @@ class PromptComposerStyler:
                 }),
                 "style_weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             },
@@ -372,10 +370,10 @@ class PromptComposerEffect:
                 }),
                 "effect_weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             },
@@ -409,10 +407,10 @@ class PromptComposerGrouping:
                 "text_in": ("STRING", {"forceInput": True}),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }

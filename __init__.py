@@ -7,10 +7,10 @@
 # Weight min, max and step values
 WEIGHT_MIN = 0
 WEIGHT_MAX = 1.95
-WEIGHT_STEP = 0.05
+WEIGHT_STEP = 0.1
 
 # Weight display format (number or slider)
-WEIGHT_DISPLAY = "slider"
+WEIGHT_DISPLAY = "number"
 
 ######## DO NOT MODIFY BELOW THIS LINE ########
 

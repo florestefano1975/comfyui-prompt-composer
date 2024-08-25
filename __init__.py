@@ -4,8 +4,6 @@
 # https://stefanoflore.it
 # https://ai-wiz.art
 
-import os
-
 # Weight min, max and step values
 WEIGHT_MIN = 0
 WEIGHT_MAX = 1.95
@@ -14,9 +12,16 @@ WEIGHT_STEP = 0.05
 # Weight display format (number or slider)
 WEIGHT_DISPLAY = "slider"
 
+######## DO NOT MODIFY BELOW THIS LINE ########
+
+import os
+
+WEIGHT_LABEL_SUFFIX = " (weight)"
+
 script_dir = os.path.dirname(__file__)
 
 # Read txt file
+
 def pmReadTxt(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
@@ -24,7 +29,8 @@ def pmReadTxt(file_path):
 
         return values
 
-# Custom lists    
+# Custom lists
+
 def customLists(folder):
     custom_lists = {}
 
@@ -38,7 +44,7 @@ def customLists(folder):
             filename = os.path.splitext(filename)[0]
 
             custom_lists[str(filename)] = (values, { "default" : values[0]})
-            custom_lists[str(filename) + "_weight"] = ("FLOAT", {
+            custom_lists[str(filename) + WEIGHT_LABEL_SUFFIX] = ("FLOAT", {
                 "default": 1,
                 "min": WEIGHT_MIN,
                 "max": WEIGHT_MAX,
@@ -52,7 +58,8 @@ def customLists(folder):
 
 custom_lists = customLists(script_dir + "/custom-lists")
 
-# Custom sublists    
+# Custom sublists
+
 def subCustomLists(folder):
     sub_custom_lists = {}
 
@@ -62,18 +69,39 @@ def subCustomLists(folder):
         if os.path.isdir(folder_name):
             sub_custom_lists[filename] = customLists(folder_name)
 
-
     return sub_custom_lists
 
 sub_custom_lists = subCustomLists(script_dir + "/custom-lists")
 
-
 # Apply weight    
+
 def applyWeight(text, weight):
     if weight == 1:
         return text
     else:
         return f"({text}:{round(weight,2)})"
+
+# Generate prompt (used by the custom list nodes)
+    
+def generatePrompt(self, text_in_opt="", **kwargs):
+    prompt = []
+
+    if text_in_opt != "":
+        prompt.append(text_in_opt)
+
+    if kwargs["active"] == True:
+        for key in kwargs.keys():
+            if WEIGHT_LABEL_SUFFIX not in str(key) and "active" not in str(key):
+                if kwargs[key] != "-" and kwargs[key + WEIGHT_LABEL_SUFFIX] > 0:
+                    prompt.append(applyWeight(kwargs[key], kwargs[key + WEIGHT_LABEL_SUFFIX]))
+
+    if len(prompt) > 0:
+        prompt = ", ".join(prompt)
+        prompt = prompt.lower()
+
+        return(prompt,)
+    else:
+        return("",)
 
 # Setup vars
 
@@ -100,24 +128,9 @@ class PromptComposerCustomLists:
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
-    FUNCTION = "promptComposerCustomLists"
+    FUNCTION = "generatePrompt"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    
-    def promptComposerCustomLists(self, text_in_opt="", **kwargs):
-        prompt = []
-        if text_in_opt != "":
-            prompt.append(text_in_opt)
-        if kwargs["active"] == True:
-            for key in kwargs.keys():
-                if "_weight" not in str(key) and "active" not in str(key):
-                    if kwargs[key] != "-" and kwargs[key + "_weight"] > 0:
-                        prompt.append(applyWeight(kwargs[key], kwargs[key + "_weight"]))
-        if len(prompt) > 0:
-            prompt = ", ".join(prompt)
-            prompt = prompt.lower()
-            return(prompt,)
-        else:
-            return("",)
+    generatePrompt = generatePrompt
 
 # Prompt Composer Single Text Node
 
@@ -445,7 +458,6 @@ class PromptComposerMerge:
     def promptComposerMerge(self, text_a="", text_b=""):
         return(text_a + ", " + text_b,)
 
-
 # Mapping
 
 NODE_CLASS_MAPPINGS = {
@@ -468,33 +480,15 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "PromptComposerMerge": "Prompt Composer Merge",
 }
 
-def promptComposerCustomListsMethod(self, text_in_opt="", **kwargs):
-    prompt = []
-    if text_in_opt != "":
-        prompt.append(text_in_opt)
-    if kwargs["active"] == True:
-        for key in kwargs.keys():
-            if "_weight" not in str(key) and "active" not in str(key):
-                if kwargs[key] != "-" and kwargs[key + "_weight"] > 0:
-                    prompt.append(applyWeight(kwargs[key], kwargs[key + "_weight"]))
-    if len(prompt) > 0:
-        prompt = ", ".join(prompt)
-        prompt = prompt.lower()
-        return(prompt,)
-    else:
-        return("",)
+# Generate the widgets for each folder of custom lists
 
 for folder_name, widget_data in sub_custom_lists.items():
-    # Extract base name (without extension) and make it class-like
-    class_name = "PromptComposer" + folder_name.capitalize()
+    class_name = "PromptComposerListFolders" + folder_name.capitalize()
     
-    dynamic_method_name = f"promptComposer{folder_name.capitalize()}"
-
-    # Define dynamic class attributes (you can adjust values based on the filename)
     class_attrs = {
         'RETURN_TYPES': ("STRING",),
         'RETURN_NAMES': ("text_out",),
-        'FUNCTION': dynamic_method_name,
+        'FUNCTION': "generatePrompt",
         'CATEGORY': f"AI WizArt/Prompt Composer Tools",
         
         'INPUT_TYPES': classmethod(lambda cls: {
@@ -503,22 +497,7 @@ for folder_name, widget_data in sub_custom_lists.items():
             },
             "required": widget_data 
         }),
-        
-        # Define the method as per your needs
-        dynamic_method_name: classmethod(
-            lambda cls, text_in_opt="", **kwargs: (
-                (lambda prompt=[]: (
-                    (prompt.append(text_in_opt) if text_in_opt != "" else None),
-                    ((
-                        [prompt.append(applyWeight(kwargs[key], kwargs[key + "_weight"]))
-                        for key in kwargs.keys() if "_weight" not in str(key) and "active" not in str(key)
-                        and kwargs[key] != "-" and kwargs[key + "_weight"] > 0] if kwargs["active"] else None
-                    )),
-                    (", ".join(prompt).lower(),) if len(prompt) > 0 else ("",)
-                )[-1])()  # This is used to get the last value from the tuple to return it correctly
-            )
-        ),
-        applyWeight: staticmethod(applyWeight)
+        'generatePrompt': generatePrompt
     }
 
     # Dynamically create the class using `type()`
@@ -526,4 +505,4 @@ for folder_name, widget_data in sub_custom_lists.items():
 
     # Add the new class to the mappings
     NODE_CLASS_MAPPINGS[class_name] = new_class
-    NODE_DISPLAY_NAME_MAPPINGS[class_name] = f"Prompt Composer Custom Lists {folder_name.capitalize()}"
+    NODE_DISPLAY_NAME_MAPPINGS[class_name] = f"Prompt Composer List - {folder_name.capitalize()}"

@@ -4,7 +4,19 @@
 # https://stefanoflore.it
 # https://ai-wiz.art
 
+# Weight min, max and step values
+WEIGHT_MIN = 0
+WEIGHT_MAX = 1.95
+WEIGHT_STEP = 0.1
+
+# Weight display format (number or slider)
+WEIGHT_DISPLAY = "number"
+
+######## DO NOT MODIFY BELOW THIS LINE ########
+
 import os
+
+WEIGHT_LABEL_SUFFIX = " (weight)"
 
 script_dir = os.path.dirname(__file__)
 
@@ -14,38 +26,82 @@ def pmReadTxt(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
         values = [line.strip() for line in lines]
+
         return values
 
 # Custom lists
 
-custom_lists = {}
-    
 def customLists(folder):
+    custom_lists = {}
+
     for filename in os.listdir(folder):
         filepath = os.path.join(folder, filename)
+
         if os.path.isfile(filepath) and filename.lower().endswith('.txt'):
-            values = pmReadTxt(script_dir + "/custom-lists/" + filename)
+            values = pmReadTxt(folder + "/" + filename)
             values = ['-'] + values
+
             filename = os.path.splitext(filename)[0]
+
             custom_lists[str(filename)] = (values, { "default" : values[0]})
-            custom_lists[str(filename) + "_weight"] = ("FLOAT", {
+            custom_lists[str(filename) + WEIGHT_LABEL_SUFFIX] = ("FLOAT", {
                 "default": 1,
-                "min": 0,
-                "max": 1.95,
-                "step": 0.05,
-                "display": "slider"
+                "min": WEIGHT_MIN,
+                "max": WEIGHT_MAX,
+                "step": WEIGHT_STEP,
+                "display": WEIGHT_DISPLAY
             })
+
     custom_lists["active"] = ("BOOLEAN", {"default": True})
 
-customLists(script_dir + "/custom-lists")
+    return custom_lists
 
-# Apply weight
-    
+custom_lists = customLists(script_dir + "/custom-lists")
+
+# Custom sublists
+
+def subCustomLists(folder):
+    sub_custom_lists = {}
+
+    for filename in os.listdir(folder):
+        folder_name = os.path.join(folder, filename)
+
+        if os.path.isdir(folder_name):
+            sub_custom_lists[filename] = customLists(folder_name)
+
+    return sub_custom_lists
+
+sub_custom_lists = subCustomLists(script_dir + "/custom-lists")
+
+# Apply weight    
+
 def applyWeight(text, weight):
     if weight == 1:
         return text
     else:
         return f"({text}:{round(weight,2)})"
+
+# Generate prompt (used by the custom list nodes)
+    
+def generatePrompt(self, text_in_opt="", **kwargs):
+    prompt = []
+
+    if text_in_opt != "":
+        prompt.append(text_in_opt)
+
+    if kwargs["active"] == True:
+        for key in kwargs.keys():
+            if WEIGHT_LABEL_SUFFIX not in str(key) and "active" not in str(key):
+                if kwargs[key] != "-" and kwargs[key + WEIGHT_LABEL_SUFFIX] > 0:
+                    prompt.append(applyWeight(kwargs[key], kwargs[key + WEIGHT_LABEL_SUFFIX]))
+
+    if len(prompt) > 0:
+        prompt = ", ".join(prompt)
+        prompt = prompt.lower()
+
+        return(prompt,)
+    else:
+        return("",)
 
 # Setup vars
 
@@ -72,24 +128,9 @@ class PromptComposerCustomLists:
         }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
-    FUNCTION = "promptComposerCustomLists"
+    FUNCTION = "generatePrompt"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
-    
-    def promptComposerCustomLists(self, text_in_opt="", **kwargs):
-        prompt = []
-        if text_in_opt != "":
-            prompt.append(text_in_opt)
-        if kwargs["active"] == True:
-            for key in kwargs.keys():
-                if "_weight" not in str(key) and "active" not in str(key):
-                    if kwargs[key] != "-" and kwargs[key + "_weight"] > 0:
-                        prompt.append(applyWeight(kwargs[key], kwargs[key + "_weight"]))
-        if len(prompt) > 0:
-            prompt = ", ".join(prompt)
-            prompt = prompt.lower()
-            return(prompt,)
-        else:
-            return("",)
+    generatePrompt = generatePrompt
 
 # Prompt Composer Single Text Node
 
@@ -108,10 +149,10 @@ class PromptComposerTextSingle:
                 }),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }
@@ -150,100 +191,100 @@ class promptComposerTextMultiple:
                 }),
                 "weight_1": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_2": ("STRING", {
                     "multiline": True
                 }),
                 "weight_2": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_3": ("STRING", {
                     "multiline": True
                 }),
                 "weight_3": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_4": ("STRING", {
                     "multiline": True
                 }),
                 "weight_4": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_5": ("STRING", {
                     "multiline": True
                 }),
                 "weight_5": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_6": ("STRING", {
                     "multiline": True
                 }),
                 "weight_6": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_7": ("STRING", {
                     "multiline": True
                 }),
                 "weight_7": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_8": ("STRING", {
                     "multiline": True
                 }),
                 "weight_8": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_9": ("STRING", {
                     "multiline": True
                 }),
                 "weight_9": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "text_10": ("STRING", {
                     "multiline": True
                 }),
                 "weight_10": ("FLOAT", {
                     "default": 1,
-                    "min": 0,
-                    "max": 1.95,
-                    "step": 0.05,
-                    "display": "slider"
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "step": WEIGHT_STEP,
+                    "display": WEIGHT_DISPLAY
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }
@@ -300,10 +341,10 @@ class PromptComposerStyler:
                 }),
                 "style_weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             },
@@ -342,10 +383,10 @@ class PromptComposerEffect:
                 }),
                 "effect_weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             },
@@ -379,10 +420,10 @@ class PromptComposerGrouping:
                 "text_in": ("STRING", {"forceInput": True}),
                 "weight": ("FLOAT", {
                     "default": 1,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": 1.95,
-                    "display": "slider",
+                    "step": WEIGHT_STEP,
+                    "min": WEIGHT_MIN,
+                    "max": WEIGHT_MAX,
+                    "display": WEIGHT_DISPLAY,
                 }),
                 "active": ("BOOLEAN", {"default": False}),
             }
@@ -438,3 +479,30 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "PromptComposerGrouping": "Prompt Composer Grouping",
     "PromptComposerMerge": "Prompt Composer Merge",
 }
+
+# Generate the widgets for each folder of custom lists
+
+for folder_name, widget_data in sub_custom_lists.items():
+    class_name = "PromptComposerListFolders" + folder_name.capitalize()
+    
+    class_attrs = {
+        'RETURN_TYPES': ("STRING",),
+        'RETURN_NAMES': ("text_out",),
+        'FUNCTION': "generatePrompt",
+        'CATEGORY': f"AI WizArt/Prompt Composer Tools",
+        
+        'INPUT_TYPES': classmethod(lambda cls, widget_data=widget_data: {
+            "optional": {
+                "text_in_opt": ("STRING", {"forceInput": True}),
+            },
+            "required": widget_data
+        }),
+        'generatePrompt': generatePrompt
+    }
+
+    # Dynamically create the class using `type()`
+    new_class = type(class_name, (object,), class_attrs)
+
+    # Add the new class to the mappings
+    NODE_CLASS_MAPPINGS[class_name] = new_class
+    NODE_DISPLAY_NAME_MAPPINGS[class_name] = f"Prompt Composer List - {folder_name.capitalize()}"

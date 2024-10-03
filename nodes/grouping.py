@@ -28,6 +28,8 @@ class PromptComposerGrouping:
 
     def promptComposerGrouping(self, text_in="", weight=0, active=True):
         prompt = text_in
+
         if text_in != "" and weight > 0 and active:
-            prompt = utils.applyWeight(text_in, weight)
+            prompt = utils.apply_weight(text_in, weight)
+            
         return(prompt,)

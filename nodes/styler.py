@@ -10,9 +10,11 @@ class PromptComposerStyler:
 
     styles = None
 
-    def __init__(self, script_dir):
-        styles = utils.pmReadTxt(os.path.join(script_dir, "lists/styles.txt"))
+    def __init__(self, script_dir: str):
+        styles = utils.read_words_from_file(os.path.join(script_dir, "lists/styles.txt"))
+
         styles.sort()
+
         styles = ['-'] + styles
 
         PromptComposerStyler.styles = styles
@@ -40,6 +42,7 @@ class PromptComposerStyler:
     
     def promptComposerStyler(self, text_in_opt="", style="-", style_weight=0, active=True):
         prompt = []
+
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if style != '-' and style_weight > 0 and active:
@@ -47,6 +50,7 @@ class PromptComposerStyler:
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
+
             return(prompt,)
         else:
             return("",)

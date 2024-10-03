@@ -10,9 +10,11 @@ class PromptComposerEffect:
 
     effects = None
 
-    def __init__(self, script_dir):        
-        effects = utils.pmReadTxt(os.path.join(script_dir, "lists/effects.txt"))
+    def __init__(self, script_dir: str):        
+        effects = utils.read_words_from_file(os.path.join(script_dir, "lists/effects.txt"))
+
         effects.sort()
+        
         effects = ['-'] + effects
 
         PromptComposerEffect.effects = effects
@@ -40,6 +42,7 @@ class PromptComposerEffect:
 
     def promptComposerEffect(self, text_in_opt="", effect="-", effect_weight=0, active=True):
         prompt = []
+
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if effect != '-' and effect_weight > 0 and active:
@@ -47,6 +50,7 @@ class PromptComposerEffect:
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
+
             return(prompt,)
         else:
             return("",)

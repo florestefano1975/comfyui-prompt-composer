@@ -33,13 +33,15 @@ class PromptComposerTextSingle:
 
     def promptComposerTextSingle(self, text_in_opt="", text="", weight=0, active=True):
         prompt = []
+
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if text != "" and weight > 0 and active:
-            prompt.append(utils.applyWeight(text, weight))
+            prompt.append(utils.apply_weight(text, weight))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
+            
             return(prompt,)
         else:
             return("",)

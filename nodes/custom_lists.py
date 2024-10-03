@@ -7,11 +7,11 @@ class PromptComposerCustomLists:
     FUNCTION = "generatePrompt"
     CATEGORY = "AI WizArt/Prompt Composer Tools"
 
-    generatePrompt = utils.generatePrompt
+    generatePrompt = utils.generate_prompt
     custom_lists  = None
 
-    def __init__(self, script_dir):
-        PromptComposerCustomLists.custom_lists  = utils.customLists(script_dir + "/custom-lists")
+    def __init__(self, script_dir: str):
+        PromptComposerCustomLists.custom_lists  = utils.custom_lists(script_dir + "/custom-lists")
 
     @classmethod
     def INPUT_TYPES(s):

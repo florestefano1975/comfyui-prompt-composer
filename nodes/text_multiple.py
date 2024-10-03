@@ -1,7 +1,7 @@
 from . import utils
 
 # Prompt Composer Text Node
-class promptComposerTextMultiple:
+class PromptComposerTextMultiple:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
     FUNCTION = "promptComposerTextMultiple"
@@ -121,33 +121,49 @@ class promptComposerTextMultiple:
             }
         }
 
-    def promptComposerTextMultiple(self, text_in_opt="", text_1="", weight_1=0, text_2="", weight_2=0, text_3="", weight_3=0, text_4="", weight_4=0, text_5="", weight_5=0, text_6="", weight_6=0, text_7="", weight_7=0, text_8="", weight_8=0, text_9="", weight_9=0, text_10="", weight_10=0, active=True):
+    def promptComposerTextMultiple(
+            self, 
+            text_in_opt="",
+            text_1="", weight_1=0,
+            text_2="", weight_2=0, 
+            text_3="",  weight_3=0, 
+            text_4="",  weight_4=0, 
+            text_5="",  weight_5=0, 
+            text_6="",  weight_6=0, 
+            text_7="", weight_7=0, 
+            text_8="", weight_8=0, 
+            text_9="", weight_9=0, 
+            text_10="", weight_10=0, 
+            active=True
+    ):
         prompt = []
+
         if text_in_opt != "":
             prompt.append(text_in_opt)
         if text_1 != "" and weight_1 > 0 and active:
-            prompt.append(utils.applyWeight(text_1, weight_1))
+            prompt.append(utils.apply_weight(text_1, weight_1))
         if text_2 != "" and weight_2 > 0 and active:
-            prompt.append(utils.applyWeight(text_2, weight_2))
+            prompt.append(utils.apply_weight(text_2, weight_2))
         if text_3 != "" and weight_3 > 0 and active:
-            prompt.append(utils.applyWeight(text_3, weight_3))
+            prompt.append(utils.apply_weight(text_3, weight_3))
         if text_4 != "" and weight_4 > 0 and active:
-            prompt.append(utils.applyWeight(text_4, weight_4))
+            prompt.append(utils.apply_weight(text_4, weight_4))
         if text_5 != "" and weight_5 > 0 and active:
-            prompt.append(utils.applyWeight(text_5, weight_5))
+            prompt.append(utils.apply_weight(text_5, weight_5))
         if text_6 != "" and weight_6 > 0 and active:
-            prompt.append(utils.applyWeight(text_6, weight_6))
+            prompt.append(utils.apply_weight(text_6, weight_6))
         if text_7 != "" and weight_7 > 0 and active:
-            prompt.append(utils.applyWeight(text_7, weight_7))
+            prompt.append(utils.apply_weight(text_7, weight_7))
         if text_8 != "" and weight_8 > 0 and active:
-            prompt.append(utils.applyWeight(text_8, weight_8))
+            prompt.append(utils.apply_weight(text_8, weight_8))
         if text_9 != "" and weight_9 > 0 and active:
-            prompt.append(utils.applyWeight(text_9, weight_9))
+            prompt.append(utils.apply_weight(text_9, weight_9))
         if text_10 != "" and weight_10 > 0 and active:
-            prompt.append(utils.applyWeight(text_10, weight_10))
+            prompt.append(utils.apply_weight(text_10, weight_10))
         if len(prompt) > 0:
             prompt = ", ".join(prompt)
             prompt = prompt.lower()
+            
             return(prompt,)
         else:
             return("",)

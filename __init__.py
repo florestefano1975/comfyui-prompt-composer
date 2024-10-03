@@ -1,6 +1,6 @@
 # PROMPT COMPOSER TOOLS
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.6
+# Version: 1.7
 # https://stefanoflore.it
 # https://ai-wiz.art
 import os

@@ -12,6 +12,7 @@ from .nodes.text_multiple import promptComposerTextMultiple
 from .nodes.text_single import PromptComposerTextSingle
 from .nodes.grouping import PromptComposerGrouping
 from .nodes.merge import PromptComposerMerge
+from .nodes.list_folders import createListFoldersClass
 from .nodes import utils
 
 # Setup vars
@@ -42,24 +43,7 @@ sub_custom_lists = utils.subCustomLists(script_dir + "/custom-lists")
 
 for folder_name, widget_data in sub_custom_lists.items():
     class_name = "PromptComposerListFolders" + folder_name.capitalize()
-    
-    class_attrs = {
-        'RETURN_TYPES': ("STRING",),
-        'RETURN_NAMES': ("text_out",),
-        'FUNCTION': "generatePrompt",
-        'CATEGORY': f"AI WizArt/Prompt Composer Tools",
-        
-        'INPUT_TYPES': classmethod(lambda cls, widget_data=widget_data: {
-            "optional": {
-                "text_in_opt": ("STRING", {"forceInput": True}),
-            },
-            "required": widget_data
-        }),
-        'generatePrompt': utils.generatePrompt
-    }
-
-    # Dynamically create the class using `type()`
-    new_class = type(class_name, (object,), class_attrs)
+    new_class = createListFoldersClass(class_name, widget_data)
 
     # Add the new class to the mappings
     NODE_CLASS_MAPPINGS[class_name] = new_class

@@ -6,10 +6,6 @@ A suite of tools for prompt management.
 
 ➡️ https://ko-fi.com/stefanoflore75
 
-Buy my workflows:
-
-➡️ https://stefanoflore.it/download/
-
 ## Overview
 
 ![ComfyUI Prompt Composer Node](/screenshot/prompt-composer-overview.png)

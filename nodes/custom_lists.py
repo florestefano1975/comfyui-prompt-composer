@@ -1,6 +1,6 @@
 from . import utils
+import os
 
-# Prompt Composer Custom Lists
 class PromptComposerCustomLists:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("text_out",)
@@ -8,16 +8,19 @@ class PromptComposerCustomLists:
     CATEGORY = "AI WizArt/Prompt Composer Tools"
 
     generatePrompt = utils.generate_prompt
-    custom_lists  = None
-
-    def __init__(self, script_dir: str):
-        PromptComposerCustomLists.custom_lists  = utils.custom_lists(script_dir + "/custom-lists")
+    custom_lists = None
 
     @classmethod
-    def INPUT_TYPES(s):
+    def INPUT_TYPES(cls):
+        if cls.custom_lists is None:
+            base_dir = os.path.dirname(os.path.dirname(__file__))
+            cls.custom_lists = utils.custom_lists(
+                os.path.join(base_dir, "custom-lists")
+            )
+
         return {
             "optional": {
                 "text_in_opt": ("STRING", {"forceInput": True}),
             },
-            "required": s.custom_lists
+            "required": cls.custom_lists
         }

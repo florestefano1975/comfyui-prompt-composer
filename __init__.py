@@ -3,6 +3,7 @@
 # Version: 1.7
 # https://stefanoflore.it
 # https://ai-wiz.art
+
 import os
 
 from .nodes.custom_lists import PromptComposerCustomLists
@@ -19,11 +20,14 @@ from .nodes import utils
 script_dir = os.path.dirname(__file__)
 
 NODE_CLASS_MAPPINGS = {
-    "PromptComposerCustomLists": PromptComposerCustomLists(script_dir),
+    # Fixed nodes (classes only, no args)
+    "PromptComposerCustomLists": PromptComposerCustomLists,
+    "PromptComposerStyler": PromptComposerStyler,
+    "PromptComposerEffect": PromptComposerEffect,
+
+    # Unchanged nodes
     "PromptComposerTextSingle": PromptComposerTextSingle,
     "promptComposerTextMultiple": PromptComposerTextMultiple,
-    "PromptComposerStyler": PromptComposerStyler(script_dir),
-    "PromptComposerEffect": PromptComposerEffect(script_dir),
     "PromptComposerGrouping": PromptComposerGrouping,
     "PromptComposerMerge": PromptComposerMerge,
 }
@@ -39,12 +43,16 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 }
 
 # Generate the widgets for each folder of custom lists
-sub_custom_lists = utils.sub_custom_lists(script_dir + "/custom-lists")
+sub_custom_lists = utils.sub_custom_lists(
+    os.path.join(script_dir, "custom-lists")
+)
 
 for folder_name, widget_data in sub_custom_lists.items():
     class_name = "PromptComposerListFolders" + folder_name.capitalize()
     new_class = create_list_folders_class(class_name, widget_data)
 
-    # Add the new class to the mappings
+    # Classes only — still correct here
     NODE_CLASS_MAPPINGS[class_name] = new_class
-    NODE_DISPLAY_NAME_MAPPINGS[class_name] = f"Prompt Composer List - {folder_name.capitalize()}"
+    NODE_DISPLAY_NAME_MAPPINGS[class_name] = (
+        f"Prompt Composer List - {folder_name.capitalize()}"
+    )
